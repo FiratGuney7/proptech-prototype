@@ -1,0 +1,173 @@
+/* ==========================================================================
+   TEKCE — Corporate shell
+   A faithful re-creation of the existing tekce.com/corporate chrome
+   (utility bar, masthead, breadcrumb, banner, corporate tab band, footer).
+   In production these components already exist; this file exists only so
+   the prototype renders stand-alone.
+   ========================================================================== */
+
+:root {
+  --navy: #133461;
+  --navy-900: #0c284d;
+  --navy-950: #0a203e;
+  --blue: #0f4b9d;
+  --blue-bright: #4694ff;
+  --blue-soft: #93c1ff;
+  --red: #ff1700;
+  --pale: #eaeff7;
+  --pale-2: #f5f7fb;
+  --line: #ccd8e7;
+  --ink: #2a3a46;
+  --ink-2: #5b6b7a;
+  --heading: #464646;
+  --white: #fff;
+  --container: 1140px;
+  --gutter: 15px;
+  --font: "Libre Franklin", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--white);
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; }
+.container { max-width: calc(var(--container) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--navy); color: #fff; padding: 10px 14px; font-weight: 600; font-size: 14px; }
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 3px; }
+
+/* ---------- Header (white option band 45px + navy band 100px, as on tekce.com) ---------- */
+.tk-header { background: linear-gradient(#fff 45px, var(--navy) 0); position: relative; z-index: 30; }
+.tk-header__in { display: flex; height: 145px; }
+.tk-header__left { width: 300px; flex: none; display: grid; grid-template-rows: 45px 100px; }
+.tk-header__opts { display: flex; align-items: center; gap: 18px; }
+.tk-dd { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 0; font-size: 13px; font-weight: 700; color: var(--navy); cursor: pointer; }
+.tk-dd img { width: 16px; height: 16px; border-radius: 50%; object-fit: cover; }
+.tk-dd::after { content: ""; width: 5px; height: 5px; border: solid #8fa3c0; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); margin: -3px 0 0 2px; }
+.tk-header__logo { display: flex; align-items: center; }
+.tk-header__logo img { width: 200px; height: 48px; }
+.tk-header__right { flex: 1; display: grid; grid-template-rows: 45px 100px; min-width: 0; }
+.tk-header__top { display: flex; align-items: center; justify-content: flex-end; }
+.tk-header__top > a { display: flex; align-items: center; height: 45px; padding: 0 12px; font-size: 11px; font-weight: 500; color: var(--navy); text-decoration: none; text-transform: uppercase; white-space: nowrap; }
+.tk-header__top > a:hover { color: var(--blue); }
+.tk-header__top > a.tk-find { gap: 8px; padding: 0 15px; font-size: 13px; color: var(--red); }
+.tk-my { gap: 8px; padding-right: 0 !important; text-transform: none !important; }
+.tk-my img { width: 76px; height: auto; }
+.tk-my span { font-size: 10px; line-height: 1.35; font-weight: 400; color: var(--navy); }
+.tk-my b { color: var(--red); font-weight: 500; }
+.tk-my i { font-style: normal; color: var(--red); margin: 0 5px; }
+.tk-nav { display: flex; align-items: center; justify-content: flex-end; gap: 44px; }
+.tk-nav a { font-size: 16px; font-weight: 400; color: #fff; text-decoration: none; padding: 5px 0; }
+.tk-nav a:hover { color: var(--blue-soft); }
+.tk-nav a[aria-current="page"] { color: var(--blue-bright); }
+.tk-burger, .tk-mnav { display: none; }
+
+/* ---------- Breadcrumb (site-road) ---------- */
+.tk-road { background: rgba(15,75,157,.09); }
+.tk-road .container { display: flex; align-items: center; height: 32px; gap: 11px; }
+.tk-road__more { width: 24px; height: 24px; flex: none; background: var(--blue) url("../img/down-arrow.svg") center/10px no-repeat; }
+.tk-road ol { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; font-size: 12px; color: var(--navy); min-width: 0; white-space: nowrap; overflow: hidden; }
+.tk-road li + li::before { content: ">"; margin: 0 6px; opacity: .7; }
+.tk-road a { color: var(--navy); text-decoration: none; }
+.tk-road a:hover { text-decoration: underline; }
+.tk-road__share { margin-left: auto; height: 24px; padding: 0 15px 0 28px; border: 0; background: #ccd8e7; color: #063152; font-size: 12px; font-weight: 500; position: relative; cursor: pointer; }
+.tk-road__share::before { content: ""; position: absolute; left: 12px; top: 6px; width: 2px; height: 2px; border-radius: 50%; background: #063152; box-shadow: 0 5px 0 #063152, 0 10px 0 #063152; }
+
+/* ---------- Banner ---------- */
+.tk-banner { position: relative; height: 385px; overflow: hidden; background: var(--navy-950); }
+.tk-banner img { width: 100%; height: 100%; object-fit: cover; }
+.tk-banner__title { position: absolute; left: 0; right: 0; top: 90px; }
+.tk-banner__title span { color: #fff; font-size: 29px; font-weight: 700; line-height: 1; }
+
+/* ---------- Corporate sub menu ---------- */
+.tk-sub { background: var(--navy); padding: 10px 0; }
+.tk-sub ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 8px; margin: 0; padding: 0; }
+.tk-sub li { background: #fff; border: 1px solid #fff; border-radius: 3px; }
+.tk-sub a { display: flex; align-items: center; height: 30px; padding: 0 15px; font-size: 12px; font-weight: 600; color: var(--navy); text-decoration: none; white-space: nowrap; }
+.tk-sub li:hover { background: var(--pale); }
+.tk-sub li.is-top { background: var(--red); }
+.tk-sub li.is-top a { color: #fff; }
+.tk-sub li.is-active { background: #0d5dce; }
+.tk-sub li.is-active a { color: #fff; }
+.tk-sub .is-new::after { content: "NEW"; font-size: 8px; letter-spacing: .08em; margin-left: 7px; padding: 2px 4px; border-radius: 2px; background: #fff; color: #0d5dce; }
+
+/* ---------- Footer ---------- */
+.tk-foot__my { display: flex; align-items: center; justify-content: center; gap: 10px; height: 85px; background: linear-gradient(#ccd6e6, #fff, #ccd6e6); }
+.tk-foot__my img { width: 96px; height: auto; }
+.tk-foot__my span { font-size: 10px; line-height: 1.4; color: var(--navy); }
+.tk-foot__my b { color: var(--red); font-weight: 500; }
+.tk-foot__my i { font-style: normal; color: var(--red); margin: 0 5px; }
+.tk-foot__links { background: var(--navy-950); color: #fff; text-align: center; padding: 26px 0 28px; }
+.tk-foot__links p { margin: 0; }
+.tk-foot__h { font-size: 12px; font-weight: 600; margin-bottom: 10px !important; }
+.tk-foot__social { display: flex; justify-content: center; gap: 10px; margin-bottom: 26px; }
+.tk-foot__social a { width: 25px; height: 25px; display: grid; place-items: center; }
+.tk-foot__social svg { width: 15px; height: 15px; fill: #5ca1ff; }
+.tk-foot__tp { font-size: 12px; margin-bottom: 22px !important; }
+.tk-foot__tp b { font-weight: 600; } .tk-foot__tp b::first-letter { color: #00b67a; }
+.tk-foot__langs { font-size: 11px; font-weight: 300; margin-bottom: 18px !important; }
+.tk-foot__langs a { color: #fff; text-decoration: none; }
+.tk-foot__langs span { margin: 0 4px; opacity: .8; }
+.tk-foot__row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-bottom: 14px !important; font-size: 10px; }
+.tk-foot__row a { color: #fff; text-decoration: none; padding: 0 6px; border-left: 1px solid rgba(255,255,255,.5); line-height: 1; }
+.tk-foot__row a:first-of-type { border-left: 0; }
+.tk-foot__row em { font-style: normal; font-weight: 500; margin-right: 6px; }
+.tk-foot__phones { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; font-size: 11px; font-weight: 600; }
+.tk-foot__phones span { display: inline-flex; align-items: center; gap: 7px; }
+.tk-foot__info { background: var(--navy); color: #fff; padding: 36px 0; }
+.tk-foot__info .container { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; }
+.tk-foot__app { display: grid; justify-items: center; justify-self: start; gap: 6px; font-size: 10px; }
+.tk-foot__app img { width: 90px; height: 90px; background: #fff; }
+.tk-foot__brand { text-align: center; font-size: 10px; line-height: 1.6; }
+.tk-foot__brand img { width: 106px; height: auto; margin: 0 auto 14px; }
+.tk-foot__brand p { margin: 0; }
+.tk-foot__brand a { color: var(--blue-soft); text-decoration: none; }
+
+/* ---------- Responsive shell (tekce.com mobile: one navy bar + BUY/SELL/RENT/INVEST row) ---------- */
+@media (max-width: 960px) {
+  .tk-header { background: var(--navy); }
+  .tk-header__in { height: 64px; align-items: center; }
+  .tk-header__left { width: auto; display: flex; flex-direction: row-reverse; align-items: center; gap: 24px; flex: 1; justify-content: flex-end; }
+  .tk-header__logo { margin-right: auto; }
+  .tk-header__logo img { width: 134px; height: auto; }
+  .tk-header__opts { order: -1; }
+  .tk-dd { color: #fff; }
+  .tk-dd::after { border-color: #fff; }
+  .tk-header__right { flex: none; display: flex; align-items: center; margin-left: 18px; }
+  .tk-header__top, .tk-nav { display: none; }
+  .tk-burger { display: block; width: 30px; height: 30px; border: 0; background: none; color: #fff; padding: 0; cursor: pointer; }
+  .tk-burger span, .tk-burger span::before, .tk-burger span::after { display: block; width: 26px; height: 3px; background: currentColor; border-radius: 2px; position: relative; }
+  .tk-burger span::before, .tk-burger span::after { content: ""; position: absolute; left: 0; }
+  .tk-burger span::before { top: -8px; } .tk-burger span::after { top: 8px; }
+  .tk-header.is-open .tk-nav { display: flex; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 104px; background: var(--navy-900); padding: 8px 0; }
+  .tk-header.is-open .tk-nav a { padding: 12px 20px; }
+  .tk-mnav { display: grid; grid-template-columns: repeat(4, 1fr); background: #0f2a52; }
+  .tk-mnav a { text-align: center; padding: 11px 0; font-size: 14px; font-weight: 600; color: #fff; text-decoration: none; }
+  .tk-mnav a:first-child { background: #2b4a7a; }
+  .tk-banner { height: 250px; }
+  .tk-banner__title { top: 50%; transform: translateY(-50%); }
+  .tk-sub ul { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .tk-sub ul::-webkit-scrollbar { display: none; }
+  .tk-sub li { flex: none; }
+}
+@media (max-width: 600px) {
+  .tk-header__opts { gap: 12px; }
+  .tk-header__left { gap: 14px; }
+  .tk-road__share { display: none; }
+  .tk-banner { height: 180px; }
+  .tk-banner__title span { font-size: 22px; }
+  .tk-foot__info .container { grid-template-columns: 1fr; justify-items: center; }
+  .tk-foot__app { justify-self: center; }
+  .tk-foot__phones { gap: 8px 16px; }
+}

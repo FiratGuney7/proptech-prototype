@@ -1,0 +1,133 @@
+/* Peri product page — editorial "story and character" */
+
+.p-peri { --peri: #6e7ff3; --peri-soft: #eef0ff; --peri-ink: #3f4bb3; }
+.p-peri .eyebrow::before { background: var(--peri); }
+.p-peri .p-hero__mark { font-weight: 700; letter-spacing: -.05em; color: var(--navy); }
+.p-peri .p-hero__tag em { color: var(--peri-ink); }
+
+/* Dictionary entry */
+.dict { border-top: 2px solid var(--navy); padding-top: 26px; }
+.dict__word { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin: 0 0 6px; }
+.dict__word b { font-size: clamp(56px, 7vw, 96px); font-weight: 700; letter-spacing: -.05em; color: var(--peri); line-height: .9; }
+.dict__word span { font-size: 18px; color: var(--ink-2); font-weight: 300; }
+.dict__pos { font-style: italic; color: var(--ink-2); margin: 0 0 22px; font-size: 15px; }
+.dict ol { margin: 0; padding: 0; list-style: none; counter-reset: d; display: grid; gap: 18px; }
+.dict li { counter-increment: d; display: grid; grid-template-columns: 28px 1fr; gap: 10px; font-size: 17px; line-height: 1.55; color: var(--ink); }
+.dict li::before { content: counter(d) "."; font-weight: 700; color: var(--navy); }
+.dict li i { display: block; font-size: 14px; font-style: italic; font-weight: 400; color: var(--peri-ink); margin-bottom: 2px; }
+.dict__date { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-2); display: flex; gap: 10px; align-items: center; }
+.dict__date b { color: var(--navy); font-weight: 600; }
+
+/* Knowledge library diagram */
+.lib { display: grid; grid-template-columns: 1fr 120px 260px 120px 1fr; align-items: center; margin-top: 16px; }
+.lib__col { display: grid; gap: 14px; }
+.lib__src { border: 1px solid rgba(255,255,255,.16); border-radius: 6px; padding: 16px 18px; }
+.lib__src b { display: block; color: #fff; font-weight: 600; font-size: 16px; }
+.lib__src span { font-size: 13px; color: rgba(255,255,255,.6); }
+.lib__wire { height: 100%; min-height: 220px; }
+.lib__wire svg { width: 100%; height: 100%; overflow: visible; }
+.lib__core { aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(184,193,255,.5); display: grid; place-items: center; text-align: center; position: relative; }
+.lib__core::before { content: ""; position: absolute; inset: 18px; border-radius: 50%; border: 1px dashed rgba(184,193,255,.35); }
+.lib__core b { display: block; font-size: 52px; font-weight: 700; letter-spacing: -.05em; color: #b8c1ff; line-height: 1; }
+.lib__core > div > span { display: block; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 8px; max-width: 150px; }
+.lib__out { border-left: 2px solid var(--peri); padding: 6px 0 6px 18px; }
+.lib__out b { display: block; color: #fff; font-size: 18px; font-weight: 600; }
+.lib__out span { font-size: 13px; color: rgba(255,255,255,.65); }
+.lib__caption { display: flex; justify-content: center; margin-top: 36px; }
+
+/* Two sides */
+.sides { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+.sides > div { padding: 48px 48px 0 0; }
+.sides > div + div { padding: 48px 0 0 48px; border-left: 1px solid var(--line); }
+.side__label { font-size: 15px; font-weight: 600; color: var(--peri-ink); margin: 0 0 10px; }
+.sides .ticks li::before { border-color: var(--peri); }
+.sides .ticks { margin: 22px 0 32px; }
+
+/* Chat mock */
+.peri-chat { max-width: 420px; border-radius: 18px; }
+.peri-chat__bar { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: linear-gradient(120deg, var(--navy) 0%, #2a3f86 100%); color: #fff; }
+.peri-chat__bar i { position: relative; width: 36px; height: 36px; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #9aa6ff, var(--peri) 55%, #4b58c9); display: grid; place-items: center; font-style: normal; font-weight: 700; font-size: 15px; }
+.peri-chat__bar i::after { content: ""; position: absolute; right: -1px; bottom: -1px; width: 10px; height: 10px; border-radius: 50%; background: #2bbe6e; border: 2px solid var(--navy); }
+.peri-chat__bar b { display: block; font-weight: 600; font-size: 15px; line-height: 1.2; }
+.peri-chat__bar small { color: rgba(255,255,255,.65); font-size: 11px; }
+.peri-chat__lang { margin-left: auto; font-size: 11px; font-weight: 600; color: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.25); border-radius: 4px; padding: 3px 7px; }
+.peri-chat .chat { padding: 18px 16px 14px; background: #fafbff; gap: 8px; }
+.peri-chat__day { justify-self: center; margin: 0 0 4px; font-size: 10px; color: var(--ink-2); }
+.peri-chat .bubble { font-size: 12.5px; box-shadow: 0 1px 2px rgba(10,32,62,.06); }
+.peri-chat .bubble--in { background: #fff; border: 1px solid #e6e9fb; }
+.peri-chat .bubble small { text-align: right; }
+.peri-chat__quick { display: flex; gap: 6px; margin: -2px 0 4px; }
+.peri-chat__quick span { font-size: 11px; font-weight: 600; color: var(--peri-ink); border: 1px solid #cdd3fb; border-radius: 14px; padding: 4px 12px; background: #fff; }
+.peri-chat__quick span.on { background: var(--peri); border-color: var(--peri); color: #fff; }
+.peri-chat__typing { display: flex; gap: 4px; padding: 10px 14px; background: #fff; border: 1px solid #e6e9fb; border-radius: 14px; border-bottom-left-radius: 4px; justify-self: start; }
+.peri-chat__typing span { width: 6px; height: 6px; border-radius: 50%; background: #9aa3c7; animation: peri-dot 1.2s infinite ease-in-out; }
+.peri-chat__typing span:nth-child(2) { animation-delay: .15s; } .peri-chat__typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes peri-dot { 0%, 60%, 100% { opacity: .35; transform: none; } 30% { opacity: 1; transform: translateY(-2px); } }
+@media (prefers-reduced-motion: reduce) { .peri-chat__typing span { animation: none; } }
+.peri-chat__input { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid #e3e8f0; background: #fff; }
+.peri-chat__input span { flex: 1; height: 36px; border-radius: 18px; background: #f3f5f9; font-size: 12px; color: var(--ink-2); display: flex; align-items: center; padding: 0 14px; }
+.peri-chat__input i { width: 36px; height: 36px; border-radius: 50%; background: var(--peri); display: grid; place-items: center; }
+.handoff { display: flex; align-items: center; gap: 8px; justify-self: center; margin: 6px 0 2px; font-size: 11px; color: var(--ink-2); }
+.handoff i { width: 20px; height: 20px; border-radius: 50%; background: var(--navy); color: #fff; font-style: normal; font-size: 10px; font-weight: 700; display: grid; place-items: center; }
+
+/* Team assistant mock */
+.assist { max-width: 420px; padding: 18px; display: grid; gap: 10px; }
+.assist__q { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: 12px; color: var(--navy); }
+.assist__q::before { content: ""; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--peri); flex: none; }
+.assist__a { background: var(--peri-soft); border-radius: 8px; padding: 12px 14px; font-size: 12px; color: var(--navy); line-height: 1.5; }
+.assist__a b { display: block; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--peri-ink); margin-bottom: 4px; }
+.assist__rem { display: flex; justify-content: space-between; align-items: center; border-radius: 8px; padding: 10px 12px; background: #fff8ec; border: 1px solid #f5e2bd; font-size: 12px; color: var(--navy); }
+.assist__rem em { font-style: normal; font-size: 10px; font-weight: 600; color: #a85d00; }
+
+/* Roadmap */
+.road { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
+.road::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: linear-gradient(90deg, var(--peri) 0 66.6%, transparent 66.6%); }
+.road::after { content: ""; position: absolute; left: 66.6%; right: 0; top: 11px; height: 2px; background: #ffd9a3; }
+.road > div { padding: 44px 32px 0 0; position: relative; }
+.road > div::before { content: ""; position: absolute; top: 4px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 2px solid var(--c); z-index: 1; }
+.road h3 { font-size: 20px; font-weight: 600; color: var(--navy); margin: 16px 0 8px; }
+.road .status { display: block; margin-top: 14px; }
+.road p { margin: 0; color: var(--ink-2); font-size: 15px; max-width: 320px; }
+
+/* People statement */
+.people { font-size: clamp(30px, 4vw, 54px); font-weight: 300; letter-spacing: -.025em; line-height: 1.12; color: var(--navy); margin: 0; max-width: 980px; }
+.people b { font-weight: 700; }
+.people mark { background: none; color: var(--peri-ink); font-weight: 700; }
+
+/* Privacy band */
+.privacy { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: start; padding: 32px 36px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--line); }
+.privacy__icon { width: 52px; height: 52px; border-radius: 50%; background: var(--peri-soft); display: grid; place-items: center; }
+.privacy h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; color: var(--navy); }
+.privacy p { margin: 0; color: var(--ink-2); max-width: 720px; }
+
+@media (max-width: 960px) {
+  .lib { grid-template-columns: 1fr; gap: 0; justify-items: stretch; }
+  .lib__wire { min-height: 56px; height: 56px; }
+  .lib__wire svg { display: none; }
+  .lib__wire { position: relative; }
+  .lib__wire::before { content: ""; position: absolute; left: 50%; top: 8px; bottom: 8px; border-left: 1px dashed rgba(184,193,255,.5); }
+  .lib__core { width: 240px; justify-self: center; }
+  .sides { grid-template-columns: 1fr; }
+  .sides > div + div { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); margin-top: 48px; }
+  .sides > div { padding-right: 0; }
+  .road { grid-template-columns: 1fr; }
+  .road::before, .road::after { display: none; }
+  .road > div { padding: 0 0 32px 36px; border-left: 2px solid var(--line); margin-left: 7px; }
+  .road > div::before { left: -9px; top: 2px; }
+  .road h3 { margin-top: 10px; }
+}
+@media (max-width: 600px) {
+  .privacy { grid-template-columns: 1fr; padding: 26px; }
+}
+
+/* Peri living dot in place */
+.p-hero__mark--peri .peri-logo { font-size: 1.1em; }
+.lib__core b .peri-logo { color: #fff; }
+.lib__core b .peri-logo__i::after { background: #8e9bff; }
+.peri-chat__bar i { background: #6e7ff3 !important; font-size: 0; }
+
+/* Hero: headline on the left, the Peri logo lives in the dictionary card */
+.peri-hero__title { font-size: clamp(38px, 4.6vw, 60px); margin: 0 0 24px; }
+.peri-hero__title b { color: var(--navy); }
+.dict__word .peri-logo { font-size: 1em; font-weight: 800; color: var(--navy); }
+.dict__word b { letter-spacing: 0; }

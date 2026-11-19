@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peri Logo Directions</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700;800&family=Mrs+Saint+Delafield&family=Nunito:wght@800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --peri: #6e7ff3; --peri-deep: #4b58c9; --peri-soft: #eef0ff;
+    --navy: #133461; --navy-950: #0a203e; --red: #ff1700;
+    --ink: #2a3a46; --ink-2: #5b6b7a; --line: #dfe5ee; --bg: #f5f7fb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Libre Franklin", Arial, sans-serif; font-weight: 400; line-height: 1.5; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+  img, svg { display: block; }
+
+  /* Board header */
+  .top { background: #fff; border-bottom: 1px solid var(--line); }
+  .top .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; padding-top: 56px; padding-bottom: 48px; align-items: end; }
+  .top h1 { margin: 0 0 14px; font-size: 44px; line-height: 1.05; font-weight: 300; letter-spacing: -.02em; color: var(--navy); }
+  .top h1 b { font-weight: 700; }
+  .top p { margin: 0; font-size: 16px; color: var(--ink-2); max-width: 560px; }
+  .draft { font-size: 13px; color: var(--ink-2); margin-top: 18px !important; }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .sw { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+  .sw i { display: block; height: 64px; }
+  .sw span { display: block; padding: 8px 10px; font-size: 12px; color: var(--ink-2); }
+  .sw b { display: block; color: var(--navy); font-weight: 600; }
+
+  /* Direction */
+  .dir { padding: 64px 0; border-bottom: 1px solid var(--line); }
+  .dir:nth-of-type(even) { background: #fff; }
+  .dir__head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px; align-items: end; }
+  .dir__n { font-size: 15px; font-weight: 600; color: var(--peri-deep); margin: 0 0 6px; }
+  .dir h2 { margin: 0; font-size: 34px; font-weight: 300; letter-spacing: -.02em; color: var(--navy); line-height: 1.1; }
+  .dir h2 b { font-weight: 700; }
+  .dir__idea { margin: 0; font-size: 15px; color: var(--ink-2); }
+  .rec { color: var(--peri-deep); font-weight: 600; }
+
+  .grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 16px; }
+  .tile { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; min-width: 0; }
+  .dir:nth-of-type(even) .tile { background: var(--bg); }
+  .tile h3 { margin: 0 0 16px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+  .stage { display: grid; grid-template-rows: 1fr 1fr; gap: 12px; }
+  .stage > div { border-radius: 10px; display: grid; place-items: center; min-height: 140px; padding: 20px; }
+  .on-light { background: #fff; border: 1px solid var(--line); }
+  .dir:nth-of-type(odd) .on-light { background: #fff; }
+  .on-navy { background: var(--navy); }
+
+  .avatars { display: flex; align-items: flex-end; gap: 18px; margin-bottom: 18px; }
+  .avatars figure { margin: 0; text-align: center; font-size: 11px; color: var(--ink-2); }
+  .avatars figcaption { margin-top: 6px; }
+
+  .pros { margin: 0; padding: 0; list-style: none; font-size: 13.5px; display: grid; gap: 8px; }
+  .pros li { padding-left: 18px; position: relative; color: var(--ink); }
+  .pros li::before { content: "+"; position: absolute; left: 0; color: #13814a; font-weight: 700; }
+  .pros li.minus::before { content: "–"; color: #b26300; }
+
+  /* Chat mock */
+  .chat { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #fafbff; }
+  .chat__bar { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--navy); color: #fff; }
+  .chat__bar b { display: block; font-size: 14px; font-weight: 600; line-height: 1.2; }
+  .chat__bar small { font-size: 11px; color: rgba(255,255,255,.65); }
+  .chat__body { padding: 14px; display: grid; gap: 8px; }
+  .bub { max-width: 88%; padding: 9px 12px; border-radius: 14px; font-size: 12.5px; line-height: 1.45; }
+  .bub--in { background: #fff; border: 1px solid #e6e9fb; border-bottom-left-radius: 4px; color: var(--navy); }
+  .bub--out { background: var(--navy); color: #fff; justify-self: end; border-bottom-right-radius: 4px; }
+  .sig { font-family: "Mrs Saint Delafield", cursive; font-size: 30px; line-height: .8; color: var(--peri); display: block; margin-top: 6px; }
+
+  /* Family lineup */
+  .family { margin-top: 16px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 22px 40px; }
+  .dir:nth-of-type(even) .family { background: var(--bg); }
+  .family > span { font-size: 13px; font-weight: 600; color: var(--ink-2); margin-right: 8px; }
+  .family img { height: 22px; width: auto; }
+  .family img.my { height: 32px; }
+  .family .peri-slot { padding-left: 40px; border-left: 1px solid var(--line); }
+
+  /* ---- Direction 1: family box ---- */
+  .d1 { display: inline-flex; align-items: center; gap: 6px; font-size: var(--s, 40px); line-height: 1; }
+  .d1 b { font-weight: 800; color: var(--navy); letter-spacing: -.02em; }
+  .d1 span { background: var(--peri); color: #fff; font-weight: 300; padding: .06em .28em .1em; border-radius: .16em; letter-spacing: -.01em; }
+  .on-navy .d1 b { color: #fff; }
+  .d1-av { width: var(--a); height: var(--a); border-radius: calc(var(--a) * .24); background: var(--peri); color: #fff; display: grid; place-items: center; font-weight: 300; font-size: calc(var(--a) * .62); line-height: 1; }
+
+  /* ---- Direction 2: signature ---- */
+  .d2 { display: inline-flex; align-items: baseline; gap: 10px; }
+  .d2 span { font-family: "Mrs Saint Delafield", cursive; font-size: var(--s, 92px); line-height: .7; color: var(--peri); padding: 0 .08em; }
+  .d2 small { font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
+  .d2 small b { font-weight: 800; letter-spacing: .02em; }
+  .on-navy .d2 small { color: #fff; }
+  .on-navy .d2 span { color: #a9b4ff; }
+  .d2-av { width: var(--a); height: var(--a); border-radius: 50%; background: var(--peri-soft); border: 1px solid #d5daff; display: grid; place-items: center; overflow: hidden; }
+  .d2-av span { font-family: "Mrs Saint Delafield", cursive; font-size: calc(var(--a) * 1.05); line-height: 1; color: var(--peri-deep); transform: translate(4%, 14%); }
+
+  /* ---- Direction 3: living dot ---- */
+  .d3 { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0; font-size: var(--s, 64px); }
+  .d3--right { align-items: flex-end; }
+  .d3__word { font-size: 1em; font-weight: 800; letter-spacing: -.035em; color: var(--navy); line-height: 1; }
+  .d3__i { position: relative; display: inline-block; }
+  .d3__i::after { content: ""; position: absolute; left: 50%; top: .08em; width: .19em; height: .19em; margin-left: -.09em; border-radius: 50%; background: var(--peri); }
+  .d3__word { white-space: nowrap; }
+  .d3 small { font-size: .2em; font-weight: 300; color: var(--ink-2); line-height: 1; margin-top: var(--gap, .18em); letter-spacing: .01em; }
+  .d3 small b { font-weight: 800; }
+  .d3 small b { color: var(--navy); font-weight: 800; letter-spacing: .02em; }
+  .on-navy .d3__word { color: #fff; }
+  .on-navy .d3__i::after { background: #8e9bff; }
+  .on-navy .d3 small { color: rgba(255,255,255,.7); } .on-navy .d3 small b { color: #fff; }
+  .d3-av { width: var(--a); height: var(--a); border-radius: 50%; background: var(--peri); position: relative; display: grid; place-items: center; }
+  .d3-av--frame { border-radius: 0; background: #fff; border: max(1.5px, calc(var(--a) * .06)) solid var(--navy); }
+  .d3-av--frame::after { content: ""; width: 44%; height: 44%; border-radius: 50%; background: var(--peri); }
+  .d3-av.breathe { animation: breathe 2.6s ease-in-out infinite; }
+  @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(.86); } }
+  .dots { display: inline-flex; gap: 5px; align-items: center; padding: 10px 12px; background: #fff; border: 1px solid #e6e9fb; border-radius: 14px; border-bottom-left-radius: 4px; justify-self: start; }
+  .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--peri); animation: hop 1.2s infinite ease-in-out; }
+  .dots i:nth-child(2) { animation-delay: .15s; } .dots i:nth-child(3) { animation-delay: .3s; }
+  @keyframes hop { 0%, 60%, 100% { opacity: .35; transform: none; } 30% { opacity: 1; transform: translateY(-3px); } }
+  .motion { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+  .motion div { text-align: center; font-size: 11px; color: var(--ink-2); display: grid; justify-items: center; gap: 8px; }
+  @media (prefers-reduced-motion: reduce) { .d3-av.breathe, .dots i { animation: none; } }
+
+  .stage--4 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+  .stage > div { position: relative; }
+  .cell-label { position: absolute; left: 12px; top: 9px; font-size: 11px; color: var(--ink-2); }
+
+
+  /* ---- Living dot: closer to TEKCE ---- */
+  .d3--t .d3__i::after, .d3-av--t { background: var(--peri) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%228%208%2037%2037%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%22.55%22%3E%3Cpath%20d%3D%22M36.044%2C16.606H16.468v9.539h.582Q17.572%2C18%2C24.319%2C18h3.564V49.046l10.008-4.6V16.608H36.044Z%22%20transform%3D%22translate%28-6.405%20-6.459%29%22/%3E%3Cpath%20d%3D%22M64.012%2C26.145h.581V16.607H55.738V18h1q6.748%2C0%2C7.271%2C8.142%22%20transform%3D%22translate%28-21.679%20-6.459%29%22/%3E%3C/g%3E%3C/svg%3E") center / 62% no-repeat; }
+  .on-navy .d3--t .d3__i::after { background: #8e9bff url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%228%208%2037%2037%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%22.6%22%3E%3Cpath%20d%3D%22M36.044%2C16.606H16.468v9.539h.582Q17.572%2C18%2C24.319%2C18h3.564V49.046l10.008-4.6V16.608H36.044Z%22%20transform%3D%22translate%28-6.405%20-6.459%29%22/%3E%3Cpath%20d%3D%22M64.012%2C26.145h.581V16.607H55.738V18h1q6.748%2C0%2C7.271%2C8.142%22%20transform%3D%22translate%28-21.679%20-6.459%29%22/%3E%3C/g%3E%3C/svg%3E") center / 62% no-repeat; }
+  .d3-av--t { background-size: 56%; }
+  .d3 .endorse { display: inline-flex; align-items: center; gap: .3em; font-size: .2em; font-weight: 300; color: var(--ink-2); line-height: 1; margin-top: .18em; }
+  .d3 .endorse img { height: 1.35em; width: auto; }
+  .on-navy .d3 .endorse { color: rgba(255,255,255,.7); }
+  .closer { margin-top: 16px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; }
+  .closer > h3 { margin: 0 0 4px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+  .closer > p { margin: 0 0 18px; font-size: 14px; color: var(--ink-2); max-width: 760px; }
+  .closer__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .closer__opt { display: grid; gap: 10px; align-content: start; }
+  .closer__opt b.t { font-size: 15px; color: var(--navy); }
+  .closer__opt span.d { font-size: 13px; color: var(--ink-2); }
+  .closer__opt .stage > div { min-height: 120px; }
+  .closer__av { display: flex; align-items: flex-end; gap: 14px; font-size: 11px; color: var(--ink-2); }
+  .closer__av figure { margin: 0; text-align: center; }
+  .closer__av figcaption { margin-top: 4px; }
+  .zoom { display: grid; place-items: center; gap: 6px; font-size: 11px; color: var(--ink-2); }
+  @media (max-width: 1000px) { .closer__grid { grid-template-columns: 1fr; } }
+
+
+  /* ---- Living dot modifications ---- */
+  /* the ı is drawn in CSS so the stem can be shaped; metrics measured from Libre Franklin 800 */
+  .mod .d3__i { color: transparent; }
+  .mod .d3__i::before { content: ""; position: absolute; left: .04em; top: .316em; width: .19em; height: .53em; background: var(--navy); }
+  .on-navy .mod .d3__i::before { background: #fff; }
+  .mod--cut .d3__i::before { clip-path: polygon(0 0, 100% 0, 100% calc(100% - .088em), 0 100%); }
+  .mod .d3__i::after { margin-left: -.08em; }
+  .d3__p { display: inline-block; }
+  .mod--twice .d3__p { clip-path: polygon(0 0, 100% 0, 100% 100%, .29em 100%, .29em .75em, .05em .846em, 0 .846em); }
+  .mod--sq .d3__i::after { border-radius: 26%; }
+  .mod--frame .d3__i::after { background: transparent; border: .045em solid var(--peri); border-radius: 0; box-sizing: border-box; }
+  .on-navy .mod--frame .d3__i::after { border-color: #8e9bff; }
+  .mod--tilt .d3__i::after { border-radius: 26%; transform: rotate(-24.7deg); }
+  .mods { margin-top: 16px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; }
+  .mods > h3 { margin: 0 0 4px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+  .mods > p { margin: 0 0 18px; font-size: 14px; color: var(--ink-2); max-width: 780px; }
+  .mods__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 14px; }
+  .mods__opt { display: grid; gap: 8px; align-content: start; }
+  .mods__opt b.t { font-size: 15px; color: var(--navy); }
+  .mods__opt span.d { font-size: 13px; color: var(--ink-2); min-height: 3.9em; }
+  .mods__opt .stage > div { min-height: 118px; }
+  .av-sq { width: var(--a); height: var(--a); border-radius: 26%; background: var(--peri); display: inline-block; }
+  .av-frame { width: var(--a); height: var(--a); border: max(2px, calc(var(--a) * .16)) solid var(--peri); display: inline-block; box-sizing: border-box; }
+  .av-tilt { width: var(--a); height: var(--a); border-radius: 26%; background: var(--peri); display: inline-block; transform: rotate(-24.7deg); }
+  .mods__av { display: flex; align-items: center; gap: 14px; font-size: 11px; color: var(--ink-2); min-height: 70px; }
+  @media (max-width: 1000px) { .mods__grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .mods__grid { grid-template-columns: 1fr; } }
+
+  /* ---- Direction 4: wing P ---- */
+  .d4 { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .d4 svg { height: var(--h, 72px); width: auto; color: var(--navy); }
+  .d4-av svg { color: var(--navy); }
+  .on-navy .d4 svg { color: #fff; }
+  .d4 small { font-size: 12px; font-weight: 600; color: var(--ink-2); }
+  .d4 small b { color: var(--navy); font-weight: 800; letter-spacing: .02em; }
+  .on-navy .d4 .stem, .on-navy .d4 .txt { fill: #fff; }
+  .on-navy .d4 small { color: rgba(255,255,255,.7); } .on-navy .d4 small b { color: #fff; }
+  .d4-av { width: var(--a); height: var(--a); border-radius: 50%; background: var(--peri-soft); display: grid; place-items: center; border: 1px solid #d5daff; }
+  .d4-av svg { height: 62%; width: auto; }
+
+
+  /* ---- Directions 5–10 ---- */
+  .more { padding: 72px 0 8px; }
+  .more h2 { margin: 0; font-size: 34px; font-weight: 300; letter-spacing: -.02em; color: var(--navy); }
+  .more h2 b { font-weight: 700; }
+  .more p { margin: 10px 0 0; color: var(--ink-2); max-width: 640px; }
+  .mk { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 6px; color: var(--navy); }
+  .mk__row { display: inline-flex; align-items: center; gap: 12px; }
+  .mk__word { font-size: var(--s, 56px); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+  .mk svg { height: var(--h, 58px); width: auto; color: var(--navy); flex: none; }
+  .mk small { font-size: 12px; font-weight: 600; color: var(--ink-2); }
+  .mk small b { color: var(--navy); font-weight: 800; letter-spacing: .02em; }
+  .on-navy .mk, .on-navy .mk svg { color: #fff; }
+  .on-navy .mk small { color: rgba(255,255,255,.7); } .on-navy .mk small b { color: #fff; }
+  .av { width: var(--a); height: var(--a); display: grid; place-items: center; flex: none; color: var(--navy); }
+  .av svg { width: 64%; height: 64%; }
+  .av--circle { border-radius: 50%; background: var(--peri-soft); border: 1px solid #d5daff; }
+  .av--solid { border-radius: 50%; background: var(--peri); color: #fff; }
+  .av--sq { background: #fff; }
+  .av--sq svg { width: 100%; height: 100%; }
+  .chat__bar .av--sq { background: #fff; }
+  /* 7 badge */
+  .badge { position: relative; display: inline-flex; flex-direction: column; align-items: center; background: var(--peri); color: #fff; border-radius: 12px; padding: 22px 26px 12px; }
+  .badge::before { content: ""; position: absolute; top: 8px; left: 50%; width: 22px; height: 5px; margin-left: -11px; border-radius: 3px; background: rgba(255,255,255,.55); }
+  .badge b { font-size: var(--s, 46px); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+  .badge small { font-size: 10px; font-weight: 700; letter-spacing: .04em; margin-top: 6px; opacity: .85; }
+  .badge-av { width: var(--a); height: calc(var(--a) * 1.15); border-radius: calc(var(--a) * .18); background: var(--peri); color: #fff; position: relative; display: grid; place-items: center; font-weight: 800; font-size: calc(var(--a) * .5); line-height: 1; padding-top: calc(var(--a) * .14); }
+  .badge-av::before { content: ""; position: absolute; top: calc(var(--a) * .12); left: 50%; width: 34%; height: 7%; margin-left: -17%; border-radius: 3px; background: rgba(255,255,255,.55); }
+  /* 9 soft lowercase */
+  .soft { font-family: "Nunito", "Libre Franklin", sans-serif; font-weight: 800; letter-spacing: -.02em; color: var(--peri-deep); font-size: var(--s, 70px); line-height: 1; }
+  .on-navy .soft { color: #a9b4ff; }
+  .soft-av { width: var(--a); height: var(--a); border-radius: 50%; background: var(--peri); color: #fff; display: grid; place-items: center; font-family: "Nunito", sans-serif; font-weight: 800; font-size: calc(var(--a) * .62); line-height: 1; padding-bottom: calc(var(--a) * .12); }
+  .quote-in { font-size: 13px; font-style: italic; }
+
+  /* Avoid / next */
+  .avoid { padding: 64px 0 80px; }
+  .avoid h2 { margin: 0 0 20px; font-size: 28px; font-weight: 300; color: var(--navy); }
+  .avoid h2 b { font-weight: 700; }
+  .avoid ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .avoid li { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; font-size: 14px; color: var(--ink-2); }
+  .avoid li b { display: block; color: var(--navy); font-size: 15px; margin-bottom: 4px; }
+
+  @media (max-width: 1000px) {
+    .top .wrap, .dir__head { grid-template-columns: 1fr; gap: 24px; }
+    .grid { grid-template-columns: 1fr 1fr; }
+    .grid > .tile:first-child { grid-column: 1 / -1; }
+    .avoid ul { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .top h1 { font-size: 32px; }
+    .dir h2 { font-size: 26px; }
+    .grid { grid-template-columns: 1fr; }
+    .swatches { grid-template-columns: repeat(2, 1fr); }
+    .avoid ul { grid-template-columns: 1fr; }
+    .family .peri-slot { padding-left: 0; border-left: 0; }
+    .stage--4 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Reusable wing-P drawing (direction 4) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="wingP" viewBox="0 0 46 72">
+      <rect class="stem" x="2" y="4" width="11" height="66" rx="1.5" fill="currentColor"/>
+      <path d="M13 5 C 30 1, 46 8, 43 23 C 41 34, 28 40, 13 40 Z" fill="#6e7ff3"/>
+      <path d="M17 34 C 27 32, 35 26, 38 15" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+      <path d="M17 26 C 24 25, 29 21, 31 15" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
+    </symbol>
+
+    <symbol id="frameP" viewBox="0 0 56 56">
+      <rect x="3" y="3" width="50" height="50" rx="2" fill="none" stroke="currentColor" stroke-width="4"/>
+      <text x="28" y="43" text-anchor="middle" font-family="Libre Franklin, Arial" font-size="40" font-weight="800" fill="#6e7ff3">P</text>
+    </symbol>
+    <symbol id="quoteMark" viewBox="0 0 56 44">
+      <path d="M4 24 C4 10 12 3 22 1 L24 7 C17 10 14 14 14 19 L22 19 L22 41 L4 41 Z" fill="#6e7ff3"/>
+      <path d="M32 24 C32 10 40 3 50 1 L52 7 C45 10 42 14 42 19 L50 19 L50 41 L32 41 Z" fill="#6e7ff3"/>
+    </symbol>
+    <symbol id="libP" viewBox="0 0 44 72">
+      <rect x="2" y="2"  width="34" height="7" rx="3.5" fill="#ff1700"/>
+      <rect x="2" y="12" width="40" height="7" rx="3.5" fill="#4694ff"/>
+      <rect x="2" y="22" width="40" height="7" rx="3.5" fill="#6e7ff3"/>
+      <rect x="2" y="32" width="34" height="7" rx="3.5" fill="#0f4b9d"/>
+      <rect x="2" y="42" width="12" height="7" rx="3.5" fill="currentColor"/>
+      <rect x="2" y="52" width="12" height="7" rx="3.5" fill="currentColor"/>
+      <rect x="2" y="62" width="12" height="7" rx="3.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="pinP" viewBox="0 0 46 72">
+      <rect x="2" y="4" width="11" height="66" rx="1.5" fill="currentColor"/>
+      <path d="M13 4 H26 C37 4 44 11 44 21 C44 31 35 37 28 46 L24 52 L13 40 Z" fill="#6e7ff3"/>
+      <circle cx="27" cy="21" r="6.5" fill="#fff"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <div>
+      <h1>Peri: <b>ten logo directions</b></h1>
+      <p>Peri should read as part of TEKCE, never as a separate app, while still feeling like someone, not something. Four main directions, then six wider ideas. Each one is shown as a logo on light and dark, as the chat avatar it will mostly live as, inside a chat, and next to TeleProperty, TeleMortgage and MyTEKCE.</p>
+      <p class="draft">Brainstorm draft, 19.11.2026. Rough sketches for discussion, not final artwork.</p>
+    </div>
+    <div class="swatches" aria-label="Peri colours">
+      <div class="sw"><i style="background:#6e7ff3"></i><span><b>Peri</b>#6E7FF3</span></div>
+      <div class="sw"><i style="background:#4b58c9"></i><span><b>Peri deep</b>#4B58C9</span></div>
+      <div class="sw"><i style="background:#eef0ff"></i><span><b>Peri soft</b>#EEF0FF</span></div>
+      <div class="sw"><i style="background:#133461"></i><span><b>TEKCE navy</b>#133461</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 1 (living dot) ================= -->
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 1 · <span class="rec">Recommended</span></p><h2>The <b>living dot</b></h2></div>
+      <p class="dir__idea">A plain, bold "Peri" whose only special detail is the dot over the i. All of Peri's character lives in that dot: it is the avatar, it breathes while Peri thinks and turns into the typing dots. The word is set with the Turkish dotless "ı", so the dot is truly Peri's own.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo · two lockups</h3>
+        <div class="stage stage--4">
+          <div class="on-light"><span class="cell-label">Left aligned</span><span class="d3" style="--s:52px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-light"><span class="cell-label">Right aligned</span><span class="d3 d3--right" style="--s:52px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="d3" style="--s:52px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="d3 d3--right" style="--s:52px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar and motion</h3>
+        <div class="avatars">
+          <figure><span class="d3-av" style="--a:64px"></span><figcaption>64 px</figcaption></figure>
+          <figure><span class="d3-av" style="--a:36px"></span><figcaption>36 px</figcaption></figure>
+          <figure><span class="d3-av" style="--a:20px"></span><figcaption>20 px</figcaption></figure>
+          <figure><span class="d3-av d3-av--frame" style="--a:36px"></span><figcaption>In the TEKCE frame</figcaption></figure>
+        </div>
+        <div class="motion">
+          <div><span class="d3-av" style="--a:26px"></span>Idle</div>
+          <div><span class="d3-av breathe" style="--a:26px"></span>Thinking</div>
+          <div><span class="dots" style="padding:6px 8px"><i></i><i></i><i></i></span>Typing</div>
+        </div>
+        <ul class="pros" style="margin-top:14px">
+          <li>Works at 16 px, no new shape to learn</li>
+          <li>Character comes from motion, made for a chat product</li>
+          <li class="minus">Quiet as a static logo; it shines in use</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="d3-av" style="--a:34px"></span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+            <span class="dots"><i></i><i></i><i></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mods">
+      <h3>Modifications of the living dot</h3>
+      <p>The same word and the same dot, each with one detail borrowed from the TEKCE logo: the angled cut of the T stem, the opening in the frame, or the square of the frame itself.</p>
+      <div class="mods__grid">
+        <div class="mods__opt">
+          <b class="t">A · The TEKCE cut</b>
+          <span class="d">The foot of the i is cut at the same angle as the stem of the TEKCE T. A detail you feel before you notice it.</span>
+          <div class="stage">
+            <div class="on-light"><span class="d3 d3--right mod mod--cut" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+            <div class="on-navy"><span class="d3 d3--right mod mod--cut" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          </div>
+          <div class="mods__av"><span class="d3-av" style="--a:56px"></span><span class="d3-av" style="--a:32px"></span><span class="d3-av" style="--a:18px"></span></div>
+        </div>
+        <div class="mods__opt">
+          <b class="t">B · Cut twice</b>
+          <span class="d">The TEKCE angle appears at the foot of both the P and the i, so the word starts and ends with the same TEKCE detail.</span>
+          <div class="stage">
+            <div class="on-light"><span class="d3 d3--right mod mod--cut mod--twice" style="--s:50px"><span class="d3__word"><span class="d3__p">P</span>er<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+            <div class="on-navy"><span class="d3 d3--right mod mod--cut mod--twice" style="--s:50px"><span class="d3__word"><span class="d3__p">P</span>er<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          </div>
+          <div class="mods__av"><span class="d3-av" style="--a:56px"></span><span class="d3-av" style="--a:32px"></span><span class="d3-av" style="--a:18px"></span></div>
+        </div>
+        <div class="mods__opt">
+          <b class="t">C · The soft square</b>
+          <span class="d">The dot keeps its softness but borrows the TEKCE square. Still a dot, now with a TEKCE accent.</span>
+          <div class="stage">
+            <div class="on-light"><span class="d3 d3--right mod mod--sq" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+            <div class="on-navy"><span class="d3 d3--right mod mod--sq" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          </div>
+          <div class="mods__av"><span class="av-sq" style="--a:56px"></span><span class="av-sq" style="--a:32px"></span><span class="av-sq" style="--a:18px"></span></div>
+        </div>
+        <div class="mods__opt">
+          <b class="t">D · The frame dot</b>
+          <span class="d">The dot becomes a tiny TEKCE frame in Peri's colour. The avatar is the TEKCE frame, empty and waiting to talk.</span>
+          <div class="stage">
+            <div class="on-light"><span class="d3 d3--right mod mod--frame" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+            <div class="on-navy"><span class="d3 d3--right mod mod--frame" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          </div>
+          <div class="mods__av"><span class="av-frame" style="--a:56px"></span><span class="av-frame" style="--a:32px"></span><span class="av-frame" style="--a:18px"></span></div>
+        </div>
+        <div class="mods__opt">
+          <b class="t">E · The tilted square</b>
+          <span class="d">The soft square turns to the same angle as the TEKCE cut, as if Peri is leaning in to listen.</span>
+          <div class="stage">
+            <div class="on-light"><span class="d3 d3--right mod mod--tilt" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+            <div class="on-navy"><span class="d3 d3--right mod mod--tilt" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          </div>
+          <div class="mods__av"><span class="av-tilt" style="--a:56px"></span><span class="av-tilt" style="--a:32px"></span><span class="av-tilt" style="--a:18px"></span></div>
+        </div>
+        <div class="mods__opt">
+          <b class="t">F · Cut and soft square</b>
+          <span class="d">A and C together: the TEKCE angle at the bottom of the i, the TEKCE square at the top.</span>
+          <div class="stage">
+            <div class="on-light"><span class="d3 d3--right mod mod--cut mod--sq" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+            <div class="on-navy"><span class="d3 d3--right mod mod--cut mod--sq" style="--s:50px"><span class="d3__word">Per<span class="d3__i">ı</span></span><small>by <b>TEKCE</b></small></span></div>
+          </div>
+          <div class="mods__av"><span class="av-sq" style="--a:56px"></span><span class="av-sq" style="--a:32px"></span><span class="av-sq" style="--a:18px"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="d3" style="--s:30px"><span class="d3__word">Per<span class="d3__i">ı</span></span></span></div></div>
+  </div>
+</section>
+
+<!-- ================= 2 (family box) ================= -->
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 2</p><h2>The <b>family box</b></h2></div>
+      <p class="dir__idea">Built exactly like TeleProperty and TeleMortgage: a bold navy word, then the product name in a coloured box. Instantly part of the family; the least personality of the four.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="d1"><b>TEKCE</b><span>Peri</span></span></div>
+          <div class="on-navy"><span class="d1" style="--s:34px"><b>TEKCE</b><span>Peri</span></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars">
+          <figure><span class="d1-av" style="--a:64px">P</span><figcaption>64 px</figcaption></figure>
+          <figure><span class="d1-av" style="--a:36px">P</span><figcaption>36 px</figcaption></figure>
+          <figure><span class="d1-av" style="--a:20px">P</span><figcaption>20 px</figcaption></figure>
+        </div>
+        <ul class="pros">
+          <li>Reads as TEKCE immediately</li>
+          <li>Simple to produce and to apply</li>
+          <li class="minus">A box says "service", not "colleague"</li>
+          <li class="minus">The P avatar is generic</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="d1-av" style="--a:34px">P</span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="d1" style="--s:24px"><b>TEKCE</b><span>Peri</span></span></div></div>
+  </div>
+</section>
+
+<!-- ================= 3 (signature) ================= -->
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 3</p><h2>The <b>signature</b></h2></div>
+      <p class="dir__idea">Peri written by hand, like a colleague signing a note. A cousin of the handwritten "My" in MyTEKCE. The warmest option; weakest at small sizes and close to MyTEKCE.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="d2"><span>Peri</span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="d2" style="--s:80px"><span>Peri</span><small>by <b>TEKCE</b></small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars">
+          <figure><span class="d2-av" style="--a:64px"><span>P</span></span><figcaption>64 px</figcaption></figure>
+          <figure><span class="d2-av" style="--a:36px"><span>P</span></span><figcaption>36 px</figcaption></figure>
+          <figure><span class="d2-av" style="--a:20px"><span>P</span></span><figcaption>20 px</figcaption></figure>
+        </div>
+        <ul class="pros">
+          <li>Most human: a signature is a personal gesture</li>
+          <li>Sign-off "— Peri" under messages becomes a ritual</li>
+          <li class="minus">Script is unreadable at avatar size</li>
+          <li class="minus">Could be confused with MyTEKCE</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="d2-av" style="--a:34px"><span>P</span></span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Your viewing tour is booked for Saturday. Your advisor will call you the day before.<span class="sig">Peri</span></div>
+            <div class="bub bub--out">Thank you!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="d2" style="--s:58px"><span>Peri</span><small>by <b>TEKCE</b></small></span></div></div>
+  </div>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 4</p><h2>The <b>wing</b></h2></div>
+      <p class="dir__idea">A quiet nod to the peri of Turkish tales: the bowl of the P becomes a single wing. Has a story behind it, but needs very careful drawing to avoid looking childish, and wings are common in insurance and travel logos.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="d4"><svg viewBox="0 0 150 72" aria-label="Peri"><use href="#wingP" x="0" y="0" width="46" height="72"/><text class="txt" x="50" y="70" font-family="Libre Franklin, Arial" font-size="66" font-weight="800" letter-spacing="-2" fill="#133461">eri</text></svg><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="d4" style="--h:60px"><svg viewBox="0 0 150 72" aria-label="Peri"><use href="#wingP" x="0" y="0" width="46" height="72"/><text class="txt" x="50" y="70" font-family="Libre Franklin, Arial" font-size="66" font-weight="800" letter-spacing="-2" fill="#fff">eri</text></svg><small>by <b>TEKCE</b></small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars">
+          <figure><span class="d4-av" style="--a:64px"><svg viewBox="0 0 46 72"><use href="#wingP"/></svg></span><figcaption>64 px</figcaption></figure>
+          <figure><span class="d4-av" style="--a:36px"><svg viewBox="0 0 46 72"><use href="#wingP"/></svg></span><figcaption>36 px</figcaption></figure>
+          <figure><span class="d4-av" style="--a:20px"><svg viewBox="0 0 46 72"><use href="#wingP"/></svg></span><figcaption>20 px</figcaption></figure>
+        </div>
+        <ul class="pros">
+          <li>A real story: "why a wing?" has a good answer</li>
+          <li>A distinctive, ownable letterform</li>
+          <li class="minus">Detail disappears at 20 px</li>
+          <li class="minus">Risk of a fairy-tale or childish tone</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="d4-av" style="--a:34px;background:#fff"><svg viewBox="0 0 46 72"><use href="#wingP"/></svg></span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="d4" style="--h:34px"><svg viewBox="0 0 150 72" aria-label="Peri"><use href="#wingP" x="0" y="0" width="46" height="72"/><text class="txt" x="50" y="70" font-family="Libre Franklin, Arial" font-size="66" font-weight="800" letter-spacing="-2" fill="#133461">eri</text></svg></span></div></div>
+  </div>
+</section>
+
+
+<section class="more">
+  <div class="wrap">
+    <h2>Six more <b>ideas</b></h2>
+    <p>Wider explorations, each starting from a different part of Peri's story: the TEKCE frame, the voice, the team member, the knowledge library, the tone of voice and the property itself.</p>
+  </div>
+</section>
+
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 5</p><h2>The <b>monogram</b></h2></div>
+      <p class="dir__idea">Peri borrows the TEKCE logo's own structure: a letter in a square frame. Where TEKCE has a T, Peri has a lavender P. The closest a sub-brand can get to the master brand.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="mk" style="--h:58px;--s:56px"><span class="mk__row"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#frameP"/></svg><span class="mk__word">Peri</span></span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="mk" style="--h:50px;--s:48px"><span class="mk__row"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#frameP"/></svg><span class="mk__word">Peri</span></span><small>by <b>TEKCE</b></small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars"><figure><span class="av av--sq" style="--a:64px"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#frameP"/></svg></span><figcaption>64 px</figcaption></figure><figure><span class="av av--sq" style="--a:36px"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#frameP"/></svg></span><figcaption>36 px</figcaption></figure><figure><span class="av av--sq" style="--a:20px"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#frameP"/></svg></span><figcaption>20 px</figcaption></figure></div>
+        <ul class="pros"><li>Unmistakably TEKCE, built from the master logo</li><li>A strong square app icon</li><li class="minus">Feels like a TEKCE department more than a character</li><li class="minus">Could be confused with the TEKCE logo at small sizes</li></ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="av av--sq" style="--a:34px"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#frameP"/></svg></span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="mk" style="--h:26px;--s:24px"><span class="mk__row"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#frameP"/></svg><span class="mk__word">Peri</span></span></span></div></div>
+  </div>
+</section>
+
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 6</p><h2>The <b>voice</b></h2></div>
+      <p class="dir__idea">Peri speaks for TEKCE, so the mark is an opening quotation mark: the moment before TEKCE answers. The quote naturally belongs in a chat window.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="mk" style="--h:40px;--s:56px"><span class="mk__row"><svg viewBox="0 0 56 44" aria-hidden="true"><use href="#quoteMark"/></svg><span class="mk__word">Peri</span></span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="mk" style="--h:34px;--s:48px"><span class="mk__row"><svg viewBox="0 0 56 44" aria-hidden="true"><use href="#quoteMark"/></svg><span class="mk__word">Peri</span></span><small>by <b>TEKCE</b></small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars"><figure><span class="av av--solid" style="--a:64px"><svg viewBox="0 0 56 44" style="width:56%;height:56%"><path d="M4 24 C4 10 12 3 22 1 L24 7 C17 10 14 14 14 19 L22 19 L22 41 L4 41 Z M32 24 C32 10 40 3 50 1 L52 7 C45 10 42 14 42 19 L50 19 L50 41 L32 41 Z" fill="#fff"/></svg></span><figcaption>64 px</figcaption></figure><figure><span class="av av--solid" style="--a:36px"><svg viewBox="0 0 56 44" style="width:56%;height:56%"><path d="M4 24 C4 10 12 3 22 1 L24 7 C17 10 14 14 14 19 L22 19 L22 41 L4 41 Z M32 24 C32 10 40 3 50 1 L52 7 C45 10 42 14 42 19 L50 19 L50 41 L32 41 Z" fill="#fff"/></svg></span><figcaption>36 px</figcaption></figure><figure><span class="av av--solid" style="--a:20px"><svg viewBox="0 0 56 44" style="width:56%;height:56%"><path d="M4 24 C4 10 12 3 22 1 L24 7 C17 10 14 14 14 19 L22 19 L22 41 L4 41 Z M32 24 C32 10 40 3 50 1 L52 7 C45 10 42 14 42 19 L50 19 L50 41 L32 41 Z" fill="#fff"/></svg></span><figcaption>20 px</figcaption></figure></div>
+        <ul class="pros"><li>Says it plainly: Peri is TEKCE's voice</li><li>A quote mark feels at home in every chat</li><li class="minus">Quote marks are common in reviews and testimonials</li><li class="minus">Abstract; the name has to do the work</li></ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="av av--solid" style="--a:34px"><svg viewBox="0 0 56 44" style="width:56%;height:56%"><path d="M4 24 C4 10 12 3 22 1 L24 7 C17 10 14 14 14 19 L22 19 L22 41 L4 41 Z M32 24 C32 10 40 3 50 1 L52 7 C45 10 42 14 42 19 L50 19 L50 41 L32 41 Z" fill="#fff"/></svg></span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="mk" style="--h:18px;--s:24px"><span class="mk__row"><svg viewBox="0 0 56 44" aria-hidden="true"><use href="#quoteMark"/></svg><span class="mk__word">Peri</span></span></span></div></div>
+  </div>
+</section>
+
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 7</p><h2>The <b>name badge</b></h2></div>
+      <p class="dir__idea">Taken literally from "a new member of our team": Peri wears the same kind of name badge as every TEKCE colleague. Pairs naturally with a greeting like "Hello, I'm Peri".</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="badge" style="--s:46px"><b>Peri</b><small>TEKCE TEAM</small></span></div>
+          <div class="on-navy"><span class="badge" style="--s:40px"><b>Peri</b><small>TEKCE TEAM</small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars"><figure><span class="badge-av" style="--a:64px">P</span><figcaption>64 px</figcaption></figure><figure><span class="badge-av" style="--a:36px">P</span><figcaption>36 px</figcaption></figure><figure><span class="badge-av" style="--a:20px">P</span><figcaption>20 px</figcaption></figure></div>
+        <ul class="pros"><li>Tells the team-member story in one image</li><li>Friendly without drawing a face</li><li class="minus">The badge detail gets busy at 20 px</li><li class="minus">Risks looking like a staff ID rather than a brand</li></ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="badge-av" style="--a:30px">P</span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="badge" style="--s:20px;padding:12px 12px 6px;border-radius:7px"><b>Peri</b></span></div></div>
+  </div>
+</section>
+
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 8</p><h2>The <b>library</b></h2></div>
+      <p class="dir__idea">Peri AI is a corporate knowledge library, so the P is built from stacked lines, like the spines of books on a shelf. The lines can fill in one by one while Peri searches for an answer.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="mk" style="--h:64px;--s:62px"><span class="mk__row"><svg viewBox="0 0 44 72" aria-hidden="true"><use href="#libP"/></svg><span class="mk__word">eri</span></span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="mk" style="--h:56px;--s:54px"><span class="mk__row"><svg viewBox="0 0 44 72" aria-hidden="true"><use href="#libP"/></svg><span class="mk__word">eri</span></span><small>by <b>TEKCE</b></small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars"><figure><span class="av av--circle" style="--a:64px"><svg viewBox="0 0 44 72" aria-hidden="true"><use href="#libP"/></svg></span><figcaption>64 px</figcaption></figure><figure><span class="av av--circle" style="--a:36px"><svg viewBox="0 0 44 72" aria-hidden="true"><use href="#libP"/></svg></span><figcaption>36 px</figcaption></figure><figure><span class="av av--circle" style="--a:20px"><svg viewBox="0 0 44 72" aria-hidden="true"><use href="#libP"/></svg></span><figcaption>20 px</figcaption></figure></div>
+        <ul class="pros"><li>Tells the knowledge-library story</li><li>Built-in motion: the shelf fills as Peri thinks</li><li class="minus">Stacked lines can read as a menu icon</li><li class="minus">More technical than warm</li></ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="av av--circle" style="--a:34px;background:#fff"><svg viewBox="0 0 44 72" aria-hidden="true"><use href="#libP"/></svg></span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="mk" style="--h:30px;--s:29px"><span class="mk__row"><svg viewBox="0 0 44 72" aria-hidden="true"><use href="#libP"/></svg><span class="mk__word">eri</span></span></span></div></div>
+  </div>
+</section>
+
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 9</p><h2>The <b>soft voice</b></h2></div>
+      <p class="dir__idea">TEKCE speaks in confident capitals; Peri answers in a rounded lowercase. The contrast itself is the idea: the institution and the friendly voice inside it. No symbol at all.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="mk"><span class="soft" style="--s:72px">peri</span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="mk"><span class="soft" style="--s:62px">peri</span><small>by <b>TEKCE</b></small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars"><figure><span class="soft-av" style="--a:64px">p</span><figcaption>64 px</figcaption></figure><figure><span class="soft-av" style="--a:36px">p</span><figcaption>36 px</figcaption></figure><figure><span class="soft-av" style="--a:20px">p</span><figcaption>20 px</figcaption></figure></div>
+        <ul class="pros"><li>The warmest typographic tone of all ten</li><li>Nothing to draw or maintain beyond the word</li><li class="minus">The least distinctive; easy to copy</li><li class="minus">Brings a second typeface into the family</li></ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="soft-av" style="--a:34px">p</span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="soft" style="--s:32px">peri</span></div></div>
+  </div>
+</section>
+
+<section class="dir">
+  <div class="wrap">
+    <div class="dir__head">
+      <div><p class="dir__n">Direction 10</p><h2>The <b>pin</b></h2></div>
+      <p class="dir__idea">Peri knows every TEKCE property, so the bowl of the P becomes a map pin. The most real-estate of the ten: Peri as the one who can point you to the right home.</p>
+    </div>
+    <div class="grid">
+      <div class="tile">
+        <h3>Logo</h3>
+        <div class="stage">
+          <div class="on-light"><span class="mk" style="--h:68px;--s:66px"><span class="mk__row"><svg viewBox="0 0 46 72" aria-hidden="true"><use href="#pinP"/></svg><span class="mk__word">eri</span></span><small>by <b>TEKCE</b></small></span></div>
+          <div class="on-navy"><span class="mk" style="--h:58px;--s:56px"><span class="mk__row"><svg viewBox="0 0 46 72" aria-hidden="true"><use href="#pinP"/></svg><span class="mk__word">eri</span></span><small>by <b>TEKCE</b></small></span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <h3>Avatar</h3>
+        <div class="avatars"><figure><span class="av av--circle" style="--a:64px"><svg viewBox="0 0 46 72" aria-hidden="true"><use href="#pinP"/></svg></span><figcaption>64 px</figcaption></figure><figure><span class="av av--circle" style="--a:36px"><svg viewBox="0 0 46 72" aria-hidden="true"><use href="#pinP"/></svg></span><figcaption>36 px</figcaption></figure><figure><span class="av av--circle" style="--a:20px"><svg viewBox="0 0 46 72" aria-hidden="true"><use href="#pinP"/></svg></span><figcaption>20 px</figcaption></figure></div>
+        <ul class="pros"><li>Directly about property and place</li><li>A pin is understood worldwide</li><li class="minus">Map pins are everywhere in property brands</li><li class="minus">Ties Peri to locations only, not to knowledge or the team</li></ul>
+      </div>
+      <div class="tile">
+        <h3>In a chat</h3>
+        <div class="chat">
+          <div class="chat__bar"><span class="av av--circle" style="--a:34px;background:#fff"><svg viewBox="0 0 46 72" aria-hidden="true"><use href="#pinP"/></svg></span><div><b>Peri</b><small>TEKCE · Online</small></div></div>
+          <div class="chat__body">
+            <div class="bub bub--in">Welcome to TEKCE! I'm Peri. Are you looking to buy, rent or invest?</div>
+            <div class="bub bub--out">Buy, near the sea.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="family"><span>Next to the family</span><img src="../../assets/img/teleproperty.svg" alt="TeleProperty"><img src="../../assets/img/telemortgage.svg" alt="TeleMortgage"><img class="my" src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE"><div class="peri-slot"><span class="mk" style="--h:32px;--s:31px"><span class="mk__row"><svg viewBox="0 0 46 72" aria-hidden="true"><use href="#pinP"/></svg><span class="mk__word">eri</span></span></span></div></div>
+  </div>
+</section>
+
+<section class="avoid">
+  <div class="wrap">
+    <h2>Whichever direction we choose, <b>we avoid:</b></h2>
+    <ul>
+      <li><b>Sparkle icons</b>The ✨ symbol is used by almost every AI product; Peri would look like any AI.</li>
+      <li><b>Purple gradients</b>Same reason. Peri's colour stays flat and close to TEKCE blue.</li>
+      <li><b>Faces, robots, fairy figures</b>Clichéd, and pairing the assistant with a female figure is a corporate risk.</li>
+      <li><b>"AI" in the logo</b>Peri is a team member; "Peri AI" turns Peri into a tool. Fine in body copy, not in the mark.</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>

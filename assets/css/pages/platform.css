@@ -295,3 +295,6 @@
 @media (max-width: 960px) { .tk-side + .illustrative { margin-left: 0; } }
 .pf-hero-visual .phone__screen { height: auto; }
 .pf-hero-visual .mm__list { padding-bottom: 12px; }
+
+/* Framed TEKCE mark in alert icons */
+.pf-alert i img { width: 20px; height: 20px; display: block; }

@@ -131,3 +131,9 @@
 .peri-hero__title b { color: var(--navy); }
 .dict__word .peri-logo { font-size: 1em; font-weight: 800; color: var(--navy); }
 .dict__word b { letter-spacing: 0; }
+
+/* Framed TEKCE mark in the hand-off line */
+.handoff i { border-radius: 5px; }
+.handoff i img { width: 12px; height: 12px; display: block; }
+/* Peri logo inside the advisors sentence */
+.people .peri-logo { font-size: 1em; font-weight: 800; letter-spacing: -.035em; }

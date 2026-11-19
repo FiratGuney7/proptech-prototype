@@ -230,7 +230,7 @@ body.p-keycost .p-hero__tag em { color: #c46f00; }
 /* ---------- Peri logo: the living dot (Turkish dotless ı + Peri-coloured dot) ---------- */
 .peri-logo { display: inline-block; font-weight: 800; letter-spacing: -.035em; line-height: 1; white-space: nowrap; color: var(--navy); }
 .peri-logo__i { position: relative; display: inline-block; }
-.peri-logo__i::after { content: ""; position: absolute; left: 50%; top: .08em; width: .19em; height: .19em; margin-left: -.09em; border-radius: 50%; background: #6e7ff3; }
+.peri-logo__i::after { content: ""; position: absolute; left: .135em; top: .08em; width: .19em; height: .19em; margin-left: -.095em; border-radius: 50%; background: #6e7ff3; }
 .stage .peri-logo { color: #fff; }
 .stage .peri-logo__i::after { background: #8e9bff; }
 .peri-logo .peri-logo__i { font: inherit; color: inherit; letter-spacing: inherit; text-transform: none; margin: 0; }

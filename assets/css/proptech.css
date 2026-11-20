@@ -234,3 +234,15 @@ body.p-keycost .p-hero__tag em { color: #c46f00; }
 .stage .peri-logo { color: #fff; }
 .stage .peri-logo__i::after { background: #8e9bff; }
 .peri-logo .peri-logo__i { font: inherit; color: inherit; letter-spacing: inherit; text-transform: none; margin: 0; }
+
+/* ---------- KeyCost logo: key whose teeth are the itemised costs ---------- */
+.kc-logo { display: inline-flex; align-items: center; gap: .14em; white-space: nowrap; color: var(--navy); font-weight: 300; letter-spacing: -.035em; line-height: 1; }
+.kc-logo__mark { width: 1.22em; height: 1.22em; flex: none; margin-left: -.1em; }
+.kc-logo b { font-weight: 700; }
+.stage .kc-logo { color: #fff; }
+
+/* Live status with a soft pulse */
+.status--live { display: inline-flex; align-items: center; gap: 7px; }
+.status--live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 0 currentColor; animation: live-pulse 2.4s ease-out infinite; }
+@keyframes live-pulse { 0% { box-shadow: 0 0 0 0 rgba(105,224,159,.55); } 70% { box-shadow: 0 0 0 7px rgba(105,224,159,0); } 100% { box-shadow: 0 0 0 0 rgba(105,224,159,0); } }
+@media (prefers-reduced-motion: reduce) { .status--live::before { animation: none; } }

@@ -240,3 +240,77 @@
 .journey__layer .peri-logo { font-size: 19px; color: #fff; }
 .peri-badge .peri-logo { color: var(--navy); }
 .peri-badge .peri-logo__i::after { background: #6e7ff3; }
+
+/* ---------- Hero: PropTech by TEKCE ---------- */
+.pt-hero { padding: clamp(64px, 8vw, 112px) 0 clamp(64px, 7vw, 104px); }
+.pt-hero__title { margin: 0; font-size: clamp(44px, 6.6vw, 96px); font-weight: 300; letter-spacing: -.04em; line-height: 1; color: var(--navy); }
+.pt-hero__title > span { display: block; }
+.pt-hero__title b { font-weight: 700; }
+.pt-hero__claim { font-weight: 700; color: var(--navy); }
+.pt-hero__claim::after { content: ""; display: inline-block; width: .16em; height: .16em; margin-left: .06em; border-radius: 50%; background: var(--red); vertical-align: baseline; }
+.pt-hero__grid { display: grid; grid-template-columns: 7fr 5fr; gap: 24px 64px; align-items: end; margin-top: clamp(28px, 3vw, 40px); }
+.pt-hero__grid .lead { margin: 0; max-width: 640px; }
+.pt-hero__grid .intro__updated { justify-self: end; margin: 0; }
+/* the three principles as rising steps */
+.pt-steps { list-style: none; margin: clamp(56px, 7vw, 96px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); align-items: end; }
+.pt-steps li { position: relative; padding: 28px 32px 0 28px; border-top: 1px solid var(--navy); border-left: 1px solid var(--navy); }
+.pt-steps li:nth-child(1) { border-left: 0; padding-left: 0; }
+.pt-steps li:nth-child(2) { margin-bottom: 48px; }
+.pt-steps li:nth-child(3) { margin-bottom: 96px; border-top: 2px solid var(--red); }
+.pt-steps li:nth-child(3)::after { content: ""; position: absolute; right: 0; top: -6px; width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+.pt-steps li:nth-child(2)::before, .pt-steps li:nth-child(3)::before { content: ""; position: absolute; left: -1px; top: 100%; height: 48px; border-left: 1px solid var(--navy); }
+.pt-steps li:nth-child(3)::before { height: 96px; }
+.pt-steps__n { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; color: var(--ink-2); margin-bottom: 14px; }
+.pt-steps h2 { margin: 0 0 10px; font-size: clamp(20px, 1.8vw, 24px); font-weight: 600; letter-spacing: -.01em; color: var(--navy); line-height: 1.2; }
+.pt-steps p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 340px; }
+@media (max-width: 900px) {
+  .pt-hero__grid { grid-template-columns: 1fr; }
+  .pt-hero__grid .intro__updated { justify-self: start; }
+  .pt-steps { grid-template-columns: 1fr; gap: 0; }
+  .pt-steps li, .pt-steps li:nth-child(1) { margin: 0 0 0 calc(var(--i, 0) * 22px); padding: 22px 0 24px 22px; border-left: 1px solid var(--navy); border-top: 1px solid var(--navy); }
+  .pt-steps li:nth-child(2) { --i: 1; margin-bottom: 0; }
+  .pt-steps li:nth-child(3) { --i: 2; margin-bottom: 0; border-top-width: 2px; }
+  .pt-steps li:nth-child(2)::before, .pt-steps li:nth-child(3)::before { display: none; }
+}
+
+/* ---------- Journey: Peri on top, CRM underneath ---------- */
+.jy-lane { display: flex; align-items: center; gap: 14px 20px; flex-wrap: wrap; padding: 18px 22px; border-radius: 6px; }
+.jy-lane span { font-size: 14px; color: rgba(255,255,255,.72); }
+.jy-lane .status { margin-left: auto; }
+.jy-lane--peri { background: linear-gradient(90deg, rgba(110,127,243,.24), rgba(110,127,243,.06)); border: 1px solid rgba(142,155,255,.5); margin-bottom: 8px; }
+.jy-lane__who { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.jy-lane__who i { width: 26px; height: 26px; border-radius: 50%; background: #6e7ff3; box-shadow: inset 0 3px 7px rgba(255,255,255,.38), inset 0 -4px 8px rgba(40,50,150,.32); }
+.jy-lane__who .peri-logo { font-size: 22px; color: #fff; }
+.jy-lane__who .peri-logo__i::after { background: #8e9bff; }
+.journey .journey__stages::before { background: linear-gradient(90deg, #8e9bff, rgba(142,155,255,.35)); height: 2px; }
+.journey .journey__stages li::before { border-color: #8e9bff; }
+.jy-say { position: relative; display: flex; gap: 8px; align-items: flex-start; margin: 16px 0 0 !important; padding: 10px 12px; font-size: 13px !important; line-height: 1.45 !important; color: #e3e7ff !important; background: rgba(110,127,243,.16); border: 1px solid rgba(142,155,255,.32); border-radius: 4px 12px 12px 12px; }
+.jy-say i { flex: none; width: 14px; height: 14px; margin-top: 2px; border-radius: 50%; background: #8e9bff; }
+.jy-lane--crm { margin-top: 8px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
+.jy-lane--crm b { font-size: 15px; font-weight: 700; color: #fff; }
+.jy-crm__ticks { display: flex; gap: 6px; margin-left: auto; }
+.jy-crm__ticks i { width: 22px; height: 4px; border-radius: 2px; background: rgba(147,193,255,.55); }
+.journey + .illustrative { margin-top: 16px; }
+@media (max-width: 900px) {
+  .jy-lane .status, .jy-crm__ticks { margin-left: 0; }
+}
+
+/* ---------- Product index: KeyCost logo ---------- */
+.pindex__name--logo .kc-logo { font-size: 1em; }
+.pindex__fact .status--live { font-size: 13px; }
+
+/* ---------- Second manifesto: three distances ---------- */
+.principles--gaps .arrow-link { display: inline-block; margin-top: 14px; }
+
+/* ---------- Peri: all live ---------- */
+.peri-track--live::before { background: #6e7ff3; right: calc(33.33% - 16px); }
+.peri-track--live li.is-on::before { animation: none; }
+
+/* ---------- Partners: MyTEKCE in its own logo ---------- */
+.arrow-link--my { display: inline-flex; align-items: center; gap: 8px; }
+.arrow-link--my img { height: 26px; width: auto; }
+.journey .journey__stages li { display: flex; flex-direction: column; align-items: flex-start; }
+.journey .jy-say { margin-top: auto !important; align-self: stretch; }
+.journey .journey__stages li > p:not(.jy-say) { margin-bottom: 16px; }
+@media (max-width: 900px) { .journey .jy-say { margin-top: 0 !important; } }
+@media (max-width: 900px) { .journey .journey__stages::before { width: 2px; height: auto; left: 7px; background: linear-gradient(180deg, #8e9bff, rgba(142,155,255,.35)); } }

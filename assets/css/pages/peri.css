@@ -137,3 +137,7 @@
 .handoff i img { width: 12px; height: 12px; display: block; }
 /* Peri logo inside the advisors sentence */
 .people .peri-logo { font-size: 1em; font-weight: 800; letter-spacing: -.035em; }
+
+/* Roadmap: everything is live */
+.road::before { background: var(--peri); }
+.road::after { display: none; }

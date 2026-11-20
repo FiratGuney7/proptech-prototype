@@ -8,9 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/tekce-shell.css?v=12">
-<link rel="stylesheet" href="../../assets/css/proptech.css?v=12">
-<link rel="stylesheet" href="../../assets/css/pages/landing.css?v=12">
+<link rel="stylesheet" href="../../assets/css/tekce-shell.css?v=14">
+<link rel="stylesheet" href="../../assets/css/proptech.css?v=14">
+<link rel="stylesheet" href="../../assets/css/pages/landing.css?v=14">
 </head>
 <body class="p-landing">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -55,7 +55,7 @@
   <div class="container">
     <ul>
       <li class="pn-index"><a href="index.html" aria-current="page">Overview</a></li>
-      <li class="pn-platform"><a href="platform/index.html">Platform</a></li>
+      <li class="pn-platform"><a href="platform/index.html">Online Platforms</a></li>
       <li class="pn-mytekce"><a href="mytekce/index.html">MyTEKCE</a></li>
       <li class="pn-peri"><a href="peri/index.html">Peri</a></li>
       <li class="pn-teleproperty"><a href="teleproperty/index.html">TeleProperty</a></li>
@@ -67,25 +67,19 @@
 
 <main id="main">
 
-  <!-- 1. Intro -->
-  <section class="intro" aria-labelledby="intro-title">
+  <!-- 1. Hero -->
+  <section class="pt-hero" aria-labelledby="intro-title">
     <div class="container">
-      <div class="intro__grid">
-        <div>
-          <h1 class="display" id="intro-title">Property abroad,<br><b>as close as home.</b></h1>
-        </div>
-        <div>
-          <p class="lead">Since 2004, TEKCE has helped people buy property in countries they don't live in, in languages they may not speak, under rules they don't yet know. Every technology we build exists to close that distance — one step of the buying journey at a time.</p>
-          <p class="intro__updated">Updated : 19.11.2026</p>
-        </div>
+      <h1 class="pt-hero__title" id="intro-title"><span><b>PropTech</b> by&nbsp;TEKCE</span><span class="pt-hero__claim">Always one step ahead</span></h1>
+      <div class="pt-hero__grid">
+        <p class="lead">Real estate changes with a new wave of technology roughly every five years. We have always aimed to be at the front of that wave — and to adopt only what makes buying property simpler, clearer and more honest.</p>
+        <p class="intro__updated">Updated : 20.11.2026</p>
       </div>
-      <dl class="stats reveal">
-        <div><dt>20</dt><dd>Own offices</dd></div>
-        <div><dt>5</dt><dd>Countries</dd></div>
-        <div><dt>30+</dt><dd>Languages spoken</dd></div>
-        <div><dt>12</dt><dd>Currencies on tekce.com</dd></div>
-        <div><dt>1,500+</dt><dd>Buyers every year</dd></div>
-      </dl>
+      <ol class="pt-steps reveal">
+        <li><span class="pt-steps__n">01</span><h2>Show the full picture</h2><p>Transparency is a technology decision. If a buyer needs a number, we show it before they have to ask.</p></li>
+        <li><span class="pt-steps__n">02</span><h2>Distance shouldn't decide</h2><p>Where you live should not limit where you can buy. We design every step to work across borders.</p></li>
+        <li><span class="pt-steps__n">03</span><h2>Technology serves people</h2><p>Our advisors remain at the heart of every purchase. Technology makes them faster, better prepared and always reachable.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -96,52 +90,58 @@
         <div>
           <h2 class="h2" id="journey-title">One buyer journey.<br><b>A technology for every step.</b></h2>
         </div>
-        <p class="lead">Our products are not separate apps. Each one solves a specific moment in an international purchase — and all of them run on the same data foundation.</p>
+        <p class="lead">Our products are not separate apps. Peri guides the buyer from the first question to the title deed, each product solves one moment of the purchase — and all of it runs on the same CRM.</p>
       </div>
 
       <div class="journey reveal">
+        <div class="jy-lane jy-lane--peri">
+          <a class="jy-lane__who" href="peri/index.html"><i aria-hidden="true"></i><span class="peri-logo" role="img" aria-label="Peri">Per<span class="peri-logo__i" aria-hidden="true">ı</span></span></a>
+          <span>Guides every step, 24/7 — and brings in a TEKCE advisor whenever the buyer needs one.</span>
+          <span class="status status--live">Live</span>
+        </div>
         <ol class="journey__stages">
           <li>
             <span class="journey__n">01</span>
             <span class="journey__verb">Discover the right property</span>
-            <a class="journey__prod" href="platform/index.html">TEKCE Platform</a>
+            <a class="journey__prod" href="platform/index.html">Online Platforms</a>
             <p>Search in 12 languages and 12 currencies, on the web or the TEKCE App.</p>
+            <p class="jy-say" aria-hidden="true"><i></i>I'll show you the listings that match — in your language.</p>
           </li>
           <li>
             <span class="journey__n">02</span>
             <span class="journey__verb">See the full cost, upfront</span>
             <a class="journey__prod" href="keycost/index.html">KeyCost</a>
             <p>Every purchase cost, itemised on the listing itself.</p>
+            <p class="jy-say" aria-hidden="true"><i></i>Here is every tax and fee, explained line by line.</p>
           </li>
           <li>
             <span class="journey__n">03</span>
             <span class="journey__verb">View and buy from anywhere</span>
             <a class="journey__prod" href="teleproperty/index.html">TeleProperty ®</a>
             <p>Live video viewings through to the title deed.</p>
+            <p class="jy-say" aria-hidden="true"><i></i>Shall I connect you with an advisor for a live viewing?</p>
           </li>
           <li>
             <span class="journey__n">04</span>
             <span class="journey__verb">Finance the purchase</span>
             <a class="journey__prod" href="telemortgage/index.html">TeleMortgage</a>
             <p>An overseas mortgage application in your language.</p>
+            <p class="jy-say" aria-hidden="true"><i></i>These are the documents your application needs.</p>
           </li>
           <li>
             <span class="journey__n">05</span>
             <span class="journey__verb">Follow every step</span>
             <a class="journey__prod" href="mytekce/index.html">MyTEKCE</a>
             <p>One dashboard for buyers, sellers and partners.</p>
+            <p class="jy-say" aria-hidden="true"><i></i>Your next step is the contract. I'll remind you.</p>
           </li>
         </ol>
-        <div class="journey__layer journey__layer--peri">
-          <a class="journey__peri" href="peri/index.html"><span class="peri-logo" role="img" aria-label="Peri">Per<span class="peri-logo__i" aria-hidden="true">ı</span></span></a>
-          <span>TEKCE's AI — a corporate knowledge library that supports our clients and our team across every step.</span>
-          <span class="status status--rolling">Rolling out since Aug 2026</span>
-        </div>
-        <div class="journey__layer journey__layer--crm">
+        <div class="jy-lane jy-lane--crm">
           <b>Company-wide CRM</b>
-          <span>The data foundation every step runs on — in use since 2015.</span>
+          <span>Every enquiry, viewing, offer and deal on one record — the foundation every step runs on, since 2015.</span>
         </div>
       </div>
+      <p class="illustrative">Peri's lines are illustrative.</p>
     </div>
   </section>
 
@@ -160,7 +160,7 @@
           <a class="pindex__row" href="platform/index.html">
             <span class="pindex__n">01</span>
             <div>
-              <h3 class="pindex__name pindex__name--logo"><img class="pl-tekce" src="../../assets/img/tekce-logo-navy.svg" alt="TEKCE" width="168" height="40"><span>Platform</span></h3>
+              <h3 class="pindex__name"><b>Online</b> Platforms</h3>
               <p class="pindex__claim">tekce.com and the TEKCE App: one search across Türkiye, Spain, North Cyprus and the UAE — in the buyer's own language and currency.</p>
               <div class="pindex__fact"><span class="ui-pill">12 languages</span><span class="ui-pill">12 currencies</span><span class="pindex__go">Explore</span></div>
             </div>
@@ -197,7 +197,7 @@
             <div>
               <h3 class="pindex__name pindex__name--peri"><span class="peri-logo" role="img" aria-label="Peri">Per<span class="peri-logo__i" aria-hidden="true">ı</span></span></h3>
               <p class="pindex__claim">TEKCE's AI transformation. Peri brings over 20 years of TEKCE knowledge to every client conversation and every team member.</p>
-              <div class="pindex__fact"><span class="status status--rolling">Rolling out</span><span class="pindex__go">Explore</span></div>
+              <div class="pindex__fact"><span class="status status--live">Live</span><span class="ui-pill">24/7 live chat</span><span class="pindex__go">Explore</span></div>
             </div>
             <div class="vign" aria-hidden="true">
               <div class="v-peri">
@@ -243,7 +243,7 @@
           <a class="pindex__row" href="keycost/index.html">
             <span class="pindex__n">06</span>
             <div>
-              <h3 class="pindex__name"><b>Key</b>Cost</h3>
+              <h3 class="pindex__name pindex__name--logo"><span class="kc-logo" role="img" aria-label="KeyCost"><svg class="kc-logo__mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="11.5" cy="20" r="7.6" fill="none" stroke="#ff9600" stroke-width="4.6"/><rect x="18.6" y="17.6" width="19.4" height="4.8" rx="1" fill="#ff9600"/><rect x="24.2" y="22" width="3.4" height="4.4" fill="#ff9600"/><rect x="29" y="22" width="3.4" height="7.4" fill="#ff9600"/><rect x="33.8" y="22" width="3.4" height="10.4" fill="#ff9600"/></svg><span aria-hidden="true"><b>Key</b>Cost</span></span></h3>
               <p class="pindex__claim">The full cost of buying — taxes, fees and contributions — calculated and itemised on the property listing, before the buyer has to ask.</p>
               <div class="pindex__fact"><span class="ui-pill">On every listing</span><span class="ui-pill">Multi-country</span><span class="pindex__go">Explore</span></div>
             </div>
@@ -265,15 +265,14 @@
   <!-- 4. Manifesto -->
   <section class="section section--pale" aria-labelledby="manifesto-title">
     <div class="container">
-      <h2 class="manifesto__quote reveal" id="manifesto-title">“Always one step <b>ahead.</b>”</h2>
-      <p class="manifesto__by">TEKCE value — Innovation</p>
+      <h2 class="manifesto__quote reveal" id="manifesto-title">“Property abroad, <b>as close as home.</b>”</h2>
       <div class="split" style="margin-top:40px">
-        <p class="lead s-7">Real estate changes with a new wave of technology roughly every five years. We have always aimed to be at the front of that wave — and to adopt only what makes buying property simpler, clearer and more honest.</p>
+        <p class="lead s-7">Since 2004, TEKCE has helped people buy property in countries they don't live in, in languages they may not speak, under rules they don't yet know. Every technology we build exists to close one of those distances.</p>
       </div>
-      <div class="principles reveal">
-        <div><h3>Show the full picture</h3><p>Transparency is a technology decision. If a buyer needs a number, we show it before they have to ask.</p></div>
-        <div><h3>Distance shouldn't decide</h3><p>Where you live should not limit where you can buy. We design every step to work across borders.</p></div>
-        <div><h3>Technology serves people</h3><p>Our advisors remain at the heart of every purchase. Technology makes them faster, better prepared and always reachable.</p></div>
+      <div class="principles principles--gaps reveal">
+        <div><h3>A country you don't live in</h3><p>Live video viewings, negotiation, contract and title deed transfer — without having to travel.</p><a class="arrow-link" href="teleproperty/index.html">TeleProperty ®</a></div>
+        <div><h3>A language you may not speak</h3><p>tekce.com in 12 languages, advisors who speak more than 30 — and Peri, around the clock.</p><a class="arrow-link" href="platform/index.html">Online Platforms</a></div>
+        <div><h3>Rules you don't yet know</h3><p>Every tax and fee shown on the listing, and a mortgage application prepared in your language.</p><a class="arrow-link" href="keycost/index.html">KeyCost</a></div>
       </div>
     </div>
   </section>
@@ -303,12 +302,12 @@
   <section class="section stage" aria-labelledby="peri-title" style="--accent:#6e7ff3">
     <div class="container split split--top">
       <div class="s-6">
-        <h2 class="h2" id="peri-title">Not a tool.<br><b>A new member of our team.</b></h2>
+        <h2 class="h2" id="peri-title">Not an AI tool.<br><b>A new member of our team.</b></h2>
         <p class="lead">Peri is a corporate knowledge library built from over 20 years of TEKCE know-how. It welcomes clients around the clock and gives every member of our team instant access to what the company knows.</p>
-        <ol class="peri-track reveal" aria-label="Where Peri is today">
-          <li class="is-on"><b>Our team</b><span>TEKCE's knowledge, instantly, in daily work</span><span class="status status--rolling">Rolling out</span></li>
-          <li class="is-on"><b>Our clients</b><span>24/7 live chat, coming to every TEKCE channel</span><span class="status status--rolling">Rolling out</span></li>
-          <li><b>Every call</b><span>Answered within three seconds</span><span class="status status--aim">Our aim</span></li>
+        <ol class="peri-track peri-track--live reveal" aria-label="Where Peri works today">
+          <li class="is-on"><b>Our team</b><span>TEKCE's knowledge, instantly, in daily work</span><span class="status status--live">Live</span></li>
+          <li class="is-on"><b>Our clients</b><span>24/7 live chat on every TEKCE channel</span><span class="status status--live">Live</span></li>
+          <li class="is-on"><b>Every call</b><span>Answered within three seconds</span><span class="status status--live">Live</span></li>
         </ol>
         <div class="btn-row"><a class="btn btn--ghost" href="peri/index.html">Meet Peri</a></div>
       </div>
@@ -349,14 +348,14 @@
   <section class="section section--pale" aria-labelledby="partners-title">
     <div class="container split">
       <div class="s-5">
-        <h2 class="h2" id="partners-title">Technology we <b>share.</b></h2>
+        <h2 class="h2" id="partners-title">Transparency is trust.<br><b>Technology we share.</b></h2>
         <p class="lead">TEKCE's partners and affiliates work with the same tools and inventory as our own offices.</p>
         <div class="partner-points">
           <div><h3>White-label listing app</h3><p>Present thousands of verified, daily-updated listings under your own brand.</p></div>
           <div><h3>Referral links on any page</h3><p>Copy any tekce.com page with your personal code attached, in one click.</p></div>
           <div><h3>Real-time tracking in MyTEKCE</h3><p>Follow every lead, viewing, offer and deal as it happens.</p></div>
         </div>
-        <div class="btn-row"><a class="arrow-link" href="mytekce/index.html">MyTEKCE for partners</a></div>
+        <div class="btn-row"><a class="arrow-link arrow-link--my" href="mytekce/index.html"><img src="../../assets/img/mytekce-logo-blue.svg" alt="MyTEKCE" width="96" height="28"> for partners</a></div>
       </div>
       <div class="s-7">
         <div class="ref-card reveal" aria-hidden="true">
@@ -381,10 +380,10 @@
     <div class="container">
       <h2 class="h3" id="faq-title" style="color:var(--blue);font-size:18px">FAQs</h2>
       <div class="faq">
-        <details open><summary>What is TEKCE Proptech?</summary><div><p>TEKCE Proptech brings together the technologies TEKCE has developed for international property buyers, sellers and partners: the TEKCE Platform and App, KeyCost, TeleProperty ®, TeleMortgage, MyTEKCE and Peri, our AI.</p></div></details>
+        <details open><summary>What is TEKCE Proptech?</summary><div><p>TEKCE Proptech brings together the technologies TEKCE has developed for international property buyers, sellers and partners: our online platforms and the TEKCE App, KeyCost, TeleProperty ®, TeleMortgage, MyTEKCE and Peri, our AI.</p></div></details>
         <details><summary>Can I buy a property in Türkiye without travelling?</summary><div><p>Yes. With TeleProperty ®, viewings take place over live video, contracts can be exchanged by scan or post, and the title deed can be transferred by our team under power of attorney.</p></div></details>
         <details><summary>Are the KeyCost figures exact?</summary><div><p>KeyCost figures are calculated on the listing's starting price and are for guidance; current legislation applies. Your advisor can prepare a personal cost breakdown for the exact property you choose.</p></div></details>
-        <details><summary>Where can I talk to Peri today?</summary><div><p>Peri is being rolled out step by step. It supports our team in their daily work and has begun welcoming clients in 24/7 live chat, with every TEKCE channel to follow.</p></div></details>
+        <details><summary>Where can I talk to Peri today?</summary><div><p>Peri is live. It supports our team in their daily work and welcomes clients in 24/7 live chat on every TEKCE channel.</p></div></details>
       </div>
     </div>
   </section>
@@ -414,6 +413,6 @@
     </div>
   </div>
 </footer>
-<script src="../../assets/js/proptech.js?v=12"></script>
+<script src="../../assets/js/proptech.js?v=14"></script>
 </body>
 </html>

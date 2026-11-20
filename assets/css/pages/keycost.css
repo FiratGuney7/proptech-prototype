@@ -107,3 +107,6 @@
 .kc-country__total b { font-size: 26px; }
 .kc-country__total { margin-bottom: 10px; padding-bottom: 12px; }
 .kc-country__ref { margin-bottom: 12px; }
+
+/* KeyCost logo in the hero */
+.p-hero__mark--kc .kc-logo { font-size: 1em; }

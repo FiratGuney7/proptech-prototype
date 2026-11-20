@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TEKCE Platform | Proptech | TEKCE ®</title>
-<meta name="description" content="The TEKCE Platform: tekce.com and the TEKCE App. One property search across Türkiye, Spain, North Cyprus and the UAE, in 12 languages and 12 currencies.">
+<title>Online Platforms | Proptech | TEKCE ®</title>
+<meta name="description" content="TEKCE Online Platforms: tekce.com and the TEKCE App. One property search across Türkiye, Spain, North Cyprus and the UAE, in 12 languages and 12 currencies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/css/tekce-shell.css?v=12">
-<link rel="stylesheet" href="../../../assets/css/proptech.css?v=12">
-<link rel="stylesheet" href="../../../assets/css/pages/platform.css?v=12">
+<link rel="stylesheet" href="../../../assets/css/tekce-shell.css?v=14">
+<link rel="stylesheet" href="../../../assets/css/proptech.css?v=14">
+<link rel="stylesheet" href="../../../assets/css/pages/platform.css?v=14">
 </head>
 <body class="p-platform">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -37,7 +37,7 @@
 <nav class="tk-road" aria-label="Breadcrumb">
   <div class="container">
     <span class="tk-road__more" aria-hidden="true"></span>
-    <ol><li><a href="#">Home</a></li><li><a href="#">Corporate</a></li><li><a href="../index.html">Proptech</a></li><li aria-current="page">TEKCE Platform</li></ol>
+    <ol><li><a href="#">Home</a></li><li><a href="#">Corporate</a></li><li><a href="../index.html">Proptech</a></li><li aria-current="page">Online Platforms</li></ol>
     <button class="tk-road__share" type="button">SHARE</button>
   </div>
 </nav>
@@ -54,7 +54,7 @@
   <div class="container">
     <ul>
       <li class="pn-index"><a href="../index.html">Overview</a></li>
-      <li class="pn-platform"><a href="index.html" aria-current="page">Platform</a></li>
+      <li class="pn-platform"><a href="index.html" aria-current="page">Online Platforms</a></li>
       <li class="pn-mytekce"><a href="../mytekce/index.html">MyTEKCE</a></li>
       <li class="pn-peri"><a href="../peri/index.html">Peri</a></li>
       <li class="pn-teleproperty"><a href="../teleproperty/index.html">TeleProperty</a></li>
@@ -70,8 +70,8 @@
   <section class="p-hero" aria-labelledby="hero-title">
     <div class="container split">
       <div class="s-6">
-        <h1 class="p-hero__mark pf-mark" id="hero-title"><img src="../../../assets/img/tekce-logo-navy.svg" alt="TEKCE Platform" width="356" height="84"></h1>
-        <p class="p-hero__tag">One platform. <em>Every buyer's language.</em></p>
+        <h1 class="p-hero__mark" id="hero-title"><b>Online</b> Platforms</h1>
+        <p class="p-hero__tag">One search. <em>Every buyer's language.</em></p>
         <p class="lead">tekce.com and the TEKCE App bring properties in Türkiye, Spain, North Cyprus and the United Arab Emirates into a single search — shown in the buyer's own language, priced in their own currency, measured in their own units.</p>
         <div class="btn-row">
           <a class="btn btn--navy" href="#">Search properties</a>
@@ -157,52 +157,35 @@
 
   <!-- 3. Smart search -->
   <section class="section" aria-labelledby="search-title">
-    <div class="container split">
+    <div class="container split split--top">
       <div class="s-4">
         <h2 class="h2" id="search-title">Filters that think like <b>an investor.</b></h2>
-        <p class="muted">Search goes beyond location and price. Buyers can filter by the details that matter in an international purchase — and keep their search for later.</p>
-        <ul class="ticks" style="margin-top:28px">
-          <li>Advanced filters, including installment options and completion year</li>
-          <li>Save Search to return to the same results</li>
-          <li>Sort by Recommended, Mostly Visited and more</li>
-          <li>Map location and distances on every listing</li>
-        </ul>
+        <p class="muted">Search goes beyond location and price. Try a few of the filters buyers use every day — the counts and listings are real tekce.com results.</p>
+        <div class="pf-find">
+          <fieldset><legend>Location</legend><div class="pf-find__row"><button type="button" data-loc="any" aria-pressed="true">Everywhere</button><button type="button" data-loc="antalya" aria-pressed="false">Antalya</button><button type="button" data-loc="spain" aria-pressed="false">Spain</button></div></fieldset>
+          <fieldset><legend>Type</legend><div class="pf-find__row"><button type="button" data-villa="0" aria-pressed="true">All types</button><button type="button" data-villa="1" aria-pressed="false">Villas &amp; houses</button></div></fieldset>
+          <fieldset><legend>Features</legend><div class="pf-find__row"><button type="button" data-feat="pool" aria-pressed="false">Private pool</button><button type="button" data-feat="sea" aria-pressed="false">Sea view</button></div></fieldset>
+        </div>
       </div>
       <div class="s-8">
-        <div class="mock tk-search reveal" aria-hidden="true">
-          <div class="mock__bar"><i></i><i></i><i></i><span>tekce.com/property</span></div>
+        <div class="mock tk-search pf-find__mock reveal">
+          <div class="mock__bar"><i></i><i></i><i></i><span class="pf-find__url">tekce.com/property</span></div>
           <div class="tk-search__top">
-            <div class="tk-search__input">Select Location, e.g. Marbella</div>
+            <div class="tk-search__input pf-find__input">Select Location, e.g. Marbella</div>
             <p class="tk-search__flabel">Filters</p>
-            <div class="tk-search__filters"><span class="on">Locations</span><span>Type</span><span>Price</span><span>Tags</span><span>Bedrooms</span><span>Bathrooms</span><span>Size</span><span>Installments</span><span>Completion year</span><span>Storeys</span><span>Plot size</span></div>
+            <div class="tk-search__filters"><span data-k="loc">Locations</span><span data-k="villa">Type</span><span>Price</span><span data-k="sea">Tags</span><span>Bedrooms</span><span>Bathrooms</span><span>Size</span><span>Installments</span><span data-k="pool">Exterior features</span></div>
+            <p class="tk-search__chosen" aria-hidden="true"></p>
             <p class="tk-search__actions"><span>Clear all</span><span class="sep"></span><span>Save search</span></p>
           </div>
-          <div class="tk-search__results">
-            <div class="tk-search__bar"><span>Showing <b>12 of 3400</b> Properties</span><span class="tk-sort">Sort by ⌄</span></div>
-            <div class="tk-grid">
-                <div class="tk-card">
-                  <div class="tk-card__photo" style="background-image:url('https://static.tekce.com/files/emlaklar/dis/400x270/orj/d2/alc-00869-apartments-a-few-meters-from-the-beach-in-altea-alicante-te.jpeg')"><span class="tk-card__ref">ALC-00869</span><span class="tk-card__star">☆</span></div>
-                  <div class="tk-card__body">
-                    <h4>Apartments 50 m from the Beach in Viva Altea Beach, Altea</h4>
-                    <p class="tk-card__loc">Spain - Alicante - Altea</p>
-                    <p class="tk-card__specs"><span><img src="../../../assets/img/room.svg" alt="">1, 2</span><span><img src="../../../assets/img/shower.svg" alt="">1, 2</span></p>
-                    <p class="tk-card__price"><small>From</small> 535.000 <small>EUR</small></p>
-                  </div>
-                </div>
-                <div class="tk-card">
-                  <div class="tk-card__photo" style="background-image:url('https://static.tekce.com/files/emlaklar/dis/400x270/orj/5e/ayt-03237-leed-certified-flats-in-antalya-altintas-by-viva-defne-project-te.jpeg')"><span class="tk-card__ref">AYT-03237</span><span class="tk-card__star">☆</span></div>
-                  <div class="tk-card__body">
-                    <h4>Quality Flats in Antalya, Altintas' Precious Viva Defne Project</h4>
-                    <p class="tk-card__loc">Türkiye - Antalya - Aksu</p>
-                    <p class="tk-card__specs"><span><img src="../../../assets/img/room.svg" alt="">1, 2</span><span><img src="../../../assets/img/shower.svg" alt="">1, 2</span></p>
-                    <p class="tk-card__price"><small>From</small> 108.700 <small>EUR</small></p>
-                  </div>
-                </div>
-            </div>
+          <div class="tk-search__results" aria-live="polite">
+            <div class="tk-search__bar"><span>Showing <b class="pf-find__count">12 of 3408</b> Properties</span><span class="tk-sort">Sort by ⌄</span></div>
+            <div class="tk-grid pf-find__grid"><a class="tk-card" href="https://tekce.com/ad/agp-01141-exclusive-three-bedroom-homes-in-central-estepona" target="_blank" rel="noopener" tabindex="-1"><div class="tk-card__photo" style="background-image:url('https://static.tekce.com/files/emlaklar/dis/400x270/orj/d6/agp-01141-exclusive-three-bedroom-homes-in-central-estepona-te.jpeg')"><span class="tk-card__ref">AGP-01141</span><span class="tk-card__star">☆</span></div><div class="tk-card__body"><h4>Homes with Pools, Gardens and Spacious Terraces in Estepona</h4><p class="tk-card__loc">SPAIN - MÁLAGA - ESTEPONA</p><p class="tk-card__specs"><span><img src="../../../assets/img/room.svg" alt="">3</span><span><img src="../../../assets/img/shower.svg" alt="">2</span></p><p class="tk-card__price">549.000 <small>EUR</small></p></div></a><a class="tk-card" href="https://tekce.com/ad/alc-01305-modern-apartments-15-km-from-beach-in-guardamar-del-segura" target="_blank" rel="noopener" tabindex="-1"><div class="tk-card__photo" style="background-image:url('https://static.tekce.com/files/emlaklar/dis/400x270/orj/b8/alc-01305-modern-apartments-15-km-from-beach-in-guardamar-del-segura-te.png')"><span class="tk-card__ref">ALC-01305</span><span class="tk-card__star">☆</span></div><div class="tk-card__body"><h4>Apartments with Pools Near Amenities in Guardamar del Segura</h4><p class="tk-card__loc">SPAIN - ALICANTE - GUARDAMAR DEL SEGURA</p><p class="tk-card__specs"><span><img src="../../../assets/img/room.svg" alt="">2, 3</span><span><img src="../../../assets/img/shower.svg" alt="">2</span></p><p class="tk-card__price"><small>From</small> 305.000 <small>EUR</small></p></div></a><a class="tk-card" href="https://tekce.com/ad/ecn-00653-land-for-sale-in-a-prime-location-in-guzelyurt-gaziveren" target="_blank" rel="noopener" tabindex="-1"><div class="tk-card__photo" style="background-image:url('https://static.tekce.com/files/emlaklar/dis/400x270/orj/15/ecn-00653-land-for-sale-in-a-prime-location-in-guzelyurt-gaziveren-te.jpeg')"><span class="tk-card__ref">ECN-00653</span><span class="tk-card__star">☆</span></div><div class="tk-card__body"><h4>Zoned Land for Sale Near the Sea in Güzelyurt Gaziveren</h4><p class="tk-card__loc">CYPRUS - NORTH CYPRUS - LEFKE</p><p class="tk-card__specs"></p><p class="tk-card__price">114.000 <small>EUR</small></p></div></a></div>
           </div>
         </div>
-        <p class="illustrative">As shown on tekce.com, 19.11.2026.</p>
+        <a class="pf-loc__go pf-find__go" href="https://tekce.com/property" target="_blank" rel="noopener"><span>See these results on tekce.com</span><small class="pf-find__total">3408 properties</small></a>
+        <p class="illustrative">Result counts and the first listings of each search as shown on tekce.com, 20.11.2026.</p>
       </div>
+      <script type="application/json" id="pf-find-data">{"listings":{"AGP-01141":{"t":"Homes with Pools, Gardens and Spacious Terraces in Estepona","loc":"SPAIN - MÁLAGA - ESTEPONA","r":"3","b":"2","p":"549.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/d6/agp-01141-exclusive-three-bedroom-homes-in-central-estepona-te.jpeg","url":"https://tekce.com/ad/agp-01141-exclusive-three-bedroom-homes-in-central-estepona"},"ALC-01305":{"t":"Apartments with Pools Near Amenities in Guardamar del Segura","loc":"SPAIN - ALICANTE - GUARDAMAR DEL SEGURA","r":"2, 3","b":"2","p":"305.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/b8/alc-01305-modern-apartments-15-km-from-beach-in-guardamar-del-segura-te.png","url":"https://tekce.com/ad/alc-01305-modern-apartments-15-km-from-beach-in-guardamar-del-segura"},"ECN-00653":{"t":"Zoned Land for Sale Near the Sea in Güzelyurt Gaziveren","loc":"CYPRUS - NORTH CYPRUS - LEFKE","r":null,"b":null,"p":"114.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/15/ecn-00653-land-for-sale-in-a-prime-location-in-guzelyurt-gaziveren-te.jpeg","url":"https://tekce.com/ad/ecn-00653-land-for-sale-in-a-prime-location-in-guzelyurt-gaziveren"},"AGP-01138":{"t":"Exclusive 3-Level Villa with Lift and Cinema Room in Torrequebrada","loc":"SPAIN - MÁLAGA - BENALMÁDENA","r":"4","b":"4","p":"2.900.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/55/agp-01138-luxury-modern-villa-with-sea-views-in-benalmadena-malaga-te-1.png","url":"https://tekce.com/ad/agp-01138-luxury-modern-villa-with-sea-views-in-benalmadena-malaga"},"AYT-05217":{"t":"Sea and Mountain-View Flat in Alanya Avsallar","loc":"TÜRKİYE - ANTALYA - ALANYA","r":"3","b":"2","p":"115.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/ec/ayt-05217-ready-to-move-flat-in-a-complex-in-alanya-avsallar-te.jpeg","url":"https://tekce.com/ad/ayt-05217-ready-to-move-flat-in-a-complex-in-alanya-avsallar"},"IST-01908":{"t":"Apartments in a Project with Infinity Pool in Maltepe İstanbul","loc":"TÜRKİYE - İSTANBUL - MALTEPE","r":"1, 2","b":"1","p":"175.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/d8/ist-01908-apartments-in-a-sea-view-project-for-sale-in-maltepe-istanbul-te.jpeg","url":"https://tekce.com/ad/ist-01908-apartments-in-a-sea-view-project-for-sale-in-maltepe-istanbul"},"IST-01912":{"t":"Villa with Pool and Winter Garden in a Complex in Tuzla İstanbul","loc":"TÜRKİYE - İSTANBUL - TUZLA","r":"9","b":"5","p":"767.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/2a/ist-01912-spacious-villa-for-sale-in-tuzla-istanbul-with-communal-pool-te.jpeg","url":"https://tekce.com/ad/ist-01912-spacious-villa-for-sale-in-tuzla-istanbul-with-communal-pool"},"AYT-05214":{"t":"Fully Renovated Villa in a Complex with a Pool in Antalya Kadriye","loc":"TÜRKİYE - ANTALYA - SERİK","r":"5","b":"2","p":"320.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/55/ayt-05214-renovated-villa-with-underfloor-heating-in-antalya-kadriye-te.png","url":"https://tekce.com/ad/ayt-05214-renovated-villa-with-underfloor-heating-in-antalya-kadriye"},"BJV-00741":{"t":"Historical Stone House with a Courtyard in Bodrum Gümüşlük","loc":"TÜRKİYE - MUĞLA - BODRUM","r":"2","b":"2","p":"624.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/e8/bjv-00741-stone-house-with-garden-and-courtyard-in-bodrum-gumusluk-te.png","url":"https://tekce.com/ad/bjv-00741-stone-house-with-garden-and-courtyard-in-bodrum-gumusluk"},"AGP-01139":{"t":"3-Bedroom Home with Jacuzzi, Sauna and Terrace in Fuengirola","loc":"SPAIN - MÁLAGA - FUENGIROLA","r":"3","b":"3","p":"780.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/1f/agp-01139-townhouse-with-sea-views-in-torreblanca-fuengirola-te.jpeg","url":"https://tekce.com/ad/agp-01139-townhouse-with-sea-views-in-torreblanca-fuengirola"},"AGP-01134":{"t":"Investment Villa with Existing Tourist Licence in Marbella","loc":"SPAIN - MÁLAGA - MARBELLA","r":"7","b":"7","p":"3.995.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/ec/agp-01134-exclusive-villa-in-the-prestigious-hacienda-las-chapas-marbella-te.jpeg","url":"https://tekce.com/ad/agp-01134-exclusive-villa-in-the-prestigious-hacienda-las-chapas-marbella"},"BJV-00736":{"t":"Villa with Turkish Bath and Sauna Surrounded by Nature in Fethiye","loc":"TÜRKİYE - MUĞLA - FETHİYE","r":"5","b":"5","p":"467.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/23/bjv-00736-detached-villa-for-sale-with-pool-in-fethiye-mugla-te.png","url":"https://tekce.com/ad/bjv-00736-detached-villa-for-sale-with-pool-in-fethiye-mugla"},"AYT-05212":{"t":"Detached Villa with Pool and Winter Garden in Döşemealtı Antalya","loc":"TÜRKİYE - ANTALYA - DÖŞEMEALTI","r":"5","b":"6","p":"803.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/86/ayt-05212-detached-villa-with-a-private-pool-in-antalya-dosemealti-center-te.jpeg","url":"https://tekce.com/ad/ayt-05212-detached-villa-with-a-private-pool-in-antalya-dosemealti-center"},"ECN-00648":{"t":"Detached Villas with Sea and Mountain Views in Girne North Cyprus","loc":"CYPRUS - NORTH CYPRUS - GİRNE","r":"4","b":"3","p":"624.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/5f/ecn-00648-detached-villas-for-sale-with-sea-views-in-girne-north-cyprus-te.jpeg","url":"https://tekce.com/ad/ecn-00648-detached-villas-for-sale-with-sea-views-in-girne-north-cyprus"},"AYT-05210":{"t":"Apartments 150 M from the Sea in Alanya Center","loc":"TÜRKİYE - ANTALYA - ALANYA","r":"1, 2","b":"1, 2","p":"220.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/e4/ayt-05210-smart-home-system-apartments-near-cleopatra-beach-in-alanya-te.jpeg","url":"https://tekce.com/ad/ayt-05210-smart-home-system-apartments-near-cleopatra-beach-in-alanya"},"AYT-05208":{"t":"Apartment for Sale with Sea Views in Alanya Avsallar","loc":"TÜRKİYE - ANTALYA - ALANYA","r":"1","b":"1","p":"79.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/e1/ayt-05208-apartment-for-sale-in-a-complex-with-rich-social-amenities-in-alanya-te.jpeg","url":"https://tekce.com/ad/ayt-05208-apartment-for-sale-in-a-complex-with-rich-social-amenities-in-alanya"},"AYT-05205":{"t":"Sea and City-View Flats in Alanya Avsallar","loc":"TÜRKİYE - ANTALYA - ALANYA","r":"1, 2","b":"1, 2","p":"95.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/4a/ayt-05205-flats-with-rich-on-site-amenities-in-alanya-avsallar-te.jpeg","url":"https://tekce.com/ad/ayt-05205-flats-with-rich-on-site-amenities-in-alanya-avsallar"},"AYT-05209":{"t":"5-Bedroom Furnished Villa with a Heated Pool in Kadriye Antalya","loc":"TÜRKİYE - ANTALYA - SERİK","r":"5","b":"4","p":"424.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/59/ayt-05209-spacious-furnished-villa-with-a-pool-in-kadriye-antalya-te.png","url":"https://tekce.com/ad/ayt-05209-spacious-furnished-villa-with-a-pool-in-kadriye-antalya"},"AYT-05207":{"t":"Villa with Private Pool and Spacious Garden in Kadriye Antalya","loc":"TÜRKİYE - ANTALYA - SERİK","r":"4","b":"3","p":"495.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/ca/ayt-05207-4-bedroom-villa-with-a-private-garden-and-pool-in-kadriye-antalya-te.jpeg","url":"https://tekce.com/ad/ayt-05207-4-bedroom-villa-with-a-private-garden-and-pool-in-kadriye-antalya"},"AYT-05185":{"t":"Spacious 5-Bedroom Detached Villa with Sea Views in Kalkan Kaş","loc":"TÜRKİYE - ANTALYA - KAŞ","r":"5","b":"7","p":"1.620.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/66/ayt-05185-spacious-sea-view-villa-for-sale-in-kalkan-antalya-te.jpeg","url":"https://tekce.com/ad/ayt-05185-spacious-sea-view-villa-for-sale-in-kalkan-antalya"},"AYT-05186":{"t":"Detached Villa with Panoramic Sea and City View in Alanya","loc":"TÜRKİYE - ANTALYA - ALANYA","r":"4","b":"3","p":"400.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/25/ayt-05186-sea-view-villa-with-a-private-pool-in-alanya-kargicak-te.jpeg","url":"https://tekce.com/ad/ayt-05186-sea-view-villa-with-a-private-pool-in-alanya-kargicak"},"AYT-05162":{"t":"Sea View Villa 500 m from Cleopatra Beach in Alanya","loc":"TÜRKİYE - ANTALYA - ALANYA","r":"4","b":"3","p":"850.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/ic/400x270/orj/65/ayt-05162-city-and-sea-view-villa-for-sale-in-alanya-te.jpeg","url":"https://tekce.com/ad/ayt-05162-city-and-sea-view-villa-for-sale-in-alanya"},"ALC-01304":{"t":"Luxury Apartments with Premium Facilities in Benidorm","loc":"SPAIN - ALICANTE - BENIDORM","r":"1, 2, 3","b":"1, 2","p":"276.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/a4/alc-01304-luxury-apartments-in-benidorm-near-the-beach-te.jpeg","url":"https://tekce.com/ad/alc-01304-luxury-apartments-in-benidorm-near-the-beach"},"AGP-01137":{"t":"Flats with Sea Views and Wellness Amenities in Torremolinos","loc":"SPAIN - MÁLAGA - TORREMOLINOS","r":"1, 2, 3","b":"1, 2","p":"418.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/74/agp-01137-sea-view-flats-in-torremolinos-with-spacious-terraces-te.jpeg","url":"https://tekce.com/ad/agp-01137-sea-view-flats-in-torremolinos-with-spacious-terraces"},"AGP-01140":{"t":"Exclusive Boutique Apartments for Sale in Torremolinos Málaga","loc":"SPAIN - MÁLAGA - TORREMOLINOS","r":"2, 3","b":"1, 2","p":"480.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/5d/agp-01140-apartments-with-bright-interiors-and-spacious-terraces-in-torremolinos-te.jpeg","url":"https://tekce.com/ad/agp-01140-apartments-with-bright-interiors-and-spacious-terraces-in-torremolinos"},"AGP-01124":{"t":"Townhouse with Extensive Amenities in Nerja Málaga","loc":"SPAIN - MÁLAGA - NERJA","r":"3","b":"2","p":"735.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/39/agp-01124-townhouses-for-sale-with-private-swimming-pools-in-nerja-te.jpeg","url":"https://tekce.com/ad/agp-01124-townhouses-for-sale-with-private-swimming-pools-in-nerja"},"ALC-01295":{"t":"Luxury Villa with Panoramic Sea Views in Finestrat","loc":"SPAIN - ALICANTE - FINESTRAT","r":"8","b":"8","p":"2.600.000","c":"EUR","img":"https://static.tekce.com/files/emlaklar/dis/400x270/orj/60/alc-01295-8-bedroom-villa-with-sea-views-in-finestrat-te.jpeg","url":"https://tekce.com/ad/alc-01295-8-bedroom-villa-with-sea-views-in-finestrat"}},"combos":{"any000":{"n":"3408","refs":["AGP-01141","ALC-01305","ECN-00653"],"url":"https://tekce.com/property"},"any001":{"n":"1452","refs":["AGP-01138","AGP-01141","AYT-05217"],"url":"https://tekce.com/property?tags=sea-view"},"any010":{"n":"902","refs":["AGP-01138","AGP-01141","IST-01908"],"url":"https://tekce.com/property?exterior=private-pool"},"any011":{"n":"417","refs":["AGP-01138","AGP-01141","IST-01908"],"url":"https://tekce.com/property?exterior=private-pool&tags=sea-view"},"any100":{"n":"930","refs":["IST-01912","AYT-05214","BJV-00741"],"url":"https://tekce.com/property?type=houses"},"any101":{"n":"386","refs":["AGP-01138","AGP-01139","AGP-01134"],"url":"https://tekce.com/property?type=houses&tags=sea-view"},"any110":{"n":"697","refs":["AGP-01138","BJV-00736","AYT-05212"],"url":"https://tekce.com/property?type=houses&exterior=private-pool"},"any111":{"n":"320","refs":["AGP-01138","AGP-01134","ECN-00648"],"url":"https://tekce.com/property?type=houses&exterior=private-pool&tags=sea-view"},"antalya000":{"n":"762","refs":["AYT-05217","AYT-05210","AYT-05214"],"url":"https://tekce.com/property-turkiye/antalya"},"antalya001":{"n":"328","refs":["AYT-05217","AYT-05208","AYT-05205"],"url":"https://tekce.com/property-turkiye/antalya?tags=sea-view"},"antalya010":{"n":"184","refs":["AYT-05212","AYT-05209","AYT-05207"],"url":"https://tekce.com/property-turkiye/antalya?exterior=private-pool"},"antalya011":{"n":"100","refs":["AYT-05185","AYT-05186","AYT-05162"],"url":"https://tekce.com/property-turkiye/antalya?exterior=private-pool&tags=sea-view"},"antalya100":{"n":"208","refs":["AYT-05214","AYT-05212","AYT-05209"],"url":"https://tekce.com/property-turkiye/antalya?type=houses"},"antalya101":{"n":"99","refs":["AYT-05185","AYT-05186","AYT-05162"],"url":"https://tekce.com/property-turkiye/antalya?type=houses&tags=sea-view"},"antalya110":{"n":"163","refs":["AYT-05212","AYT-05209","AYT-05207"],"url":"https://tekce.com/property-turkiye/antalya?type=houses&exterior=private-pool"},"antalya111":{"n":"89","refs":["AYT-05185","AYT-05186","AYT-05162"],"url":"https://tekce.com/property-turkiye/antalya?type=houses&exterior=private-pool&tags=sea-view"},"spain000":{"n":"828","refs":["AGP-01141","ALC-01305","ALC-01304"],"url":"https://tekce.com/property-spain"},"spain001":{"n":"370","refs":["AGP-01138","AGP-01141","AGP-01137"],"url":"https://tekce.com/property-spain?tags=sea-view"},"spain010":{"n":"322","refs":["AGP-01138","AGP-01141","AGP-01140"],"url":"https://tekce.com/property-spain?exterior=private-pool"},"spain011":{"n":"118","refs":["AGP-01138","AGP-01141","AGP-01134"],"url":"https://tekce.com/property-spain?exterior=private-pool&tags=sea-view"},"spain100":{"n":"337","refs":["AGP-01138","AGP-01139","AGP-01134"],"url":"https://tekce.com/property-spain?type=houses"},"spain101":{"n":"122","refs":["AGP-01138","AGP-01139","AGP-01134"],"url":"https://tekce.com/property-spain?type=houses&tags=sea-view"},"spain110":{"n":"276","refs":["AGP-01138","AGP-01134","AGP-01124"],"url":"https://tekce.com/property-spain?type=houses&exterior=private-pool"},"spain111":{"n":"94","refs":["AGP-01138","AGP-01134","ALC-01295"],"url":"https://tekce.com/property-spain?type=houses&exterior=private-pool&tags=sea-view"}}}</script>
     </div>
   </section>
 
@@ -293,24 +276,44 @@
   </section>
 
   <!-- 6. TEKCE TV & online events -->
-  <section class="section stage" aria-labelledby="media-title">
-    <div class="container split split--top">
-      <div class="s-6">
-        <h2 class="h2" id="media-title">See it on video. <b>Meet us online.</b></h2>
-        <p class="lead">On TEKCE TV, our YouTube channel, buyers can watch professional property inspections, market analyses and legal guides. Our online events bring advisors and buyers together on Zoom, in several languages.</p>
-        <div class="pf-tv reveal" style="margin-top:36px" aria-hidden="true"><span>TEKCE TV · Property inspection</span></div>
-        <p class="illustrative">Illustrative video frame.</p>
+  <section class="section section--pale" aria-labelledby="media-title">
+    <div class="container">
+      <div class="head">
+        <div>
+          <h2 class="h2" id="media-title">Real people. <b>On camera, and live.</b></h2>
+        </div>
+        <p class="lead">Buying abroad runs on trust, so we show our faces. On TEKCE TV and in our live webinars, buyers meet the advisors who will actually handle their purchase — and hear from clients who have already bought with us.</p>
       </div>
-      <div class="s-6">
-        <h3 class="pf-events__h">Upcoming online events</h3>
-        <ul class="pf-events">
-          <li class="reveal"><time><b>25</b><small>Nov 2026</small></time><div><h3>Webinar: Second Home in Spain</h3><p>17:00 Stockholm time · Zoom · in Swedish</p></div></li>
-          <li class="reveal"><time><b>27–28</b><small>Nov 2026</small></time><div><h3>Dubai's First Online Real Estate Fair</h3><p>14:00 Istanbul time · Zoom · in Turkish</p></div></li>
-          <li class="reveal"><time><b>9</b><small>Dec 2026</small></time><div><h3>Webinar: Non-Lucrative Visa in Spain</h3><p>14:00 Istanbul time · Zoom · in Turkish</p></div></li>
-        </ul>
-        <p class="muted" style="margin-top:24px">TEKCE hosts webinars on Zoom in languages including English, Swedish, Turkish, Dutch and Hungarian. See all upcoming dates on the Events page.</p>
-        <div class="btn-row"><a class="btn btn--ghost" href="https://tekce.com/events" target="_blank" rel="noopener">All events</a></div>
+      <div class="pf-people reveal">
+        <a class="pf-vid pf-vid--main" href="https://www.youtube.com/watch?v=JU-S7Jnom4Q" target="_blank" rel="noopener"><span class="pf-vid__img" style="background-image:url('https://i.ytimg.com/vi/JU-S7Jnom4Q/hqdefault.jpg')"><em>7:48</em></span><span class="pf-vid__txt"><b>“Don't Act Like a Real Estate Agent”: How to Buy Property in Türkiye</b><small>Our advisors explain · new this week</small></span></a>
+        <div class="pf-vids">
+          <a class="pf-vid" href="https://www.youtube.com/watch?v=yfNp-G3Ua-k" target="_blank" rel="noopener"><span class="pf-vid__img" style="background-image:url('https://i.ytimg.com/vi/yfNp-G3Ua-k/hqdefault.jpg')"><em>9:24</em></span><span class="pf-vid__txt"><b>EVERYTHING You Need to Know Before Buying Property in Türkiye</b><small>Our advisors explain</small></span></a>
+          <a class="pf-vid" href="https://www.youtube.com/watch?v=Lr7O5B6Zvfg" target="_blank" rel="noopener"><span class="pf-vid__img" style="background-image:url('https://i.ytimg.com/vi/Lr7O5B6Zvfg/hqdefault.jpg')"><em>10:34</em></span><span class="pf-vid__txt"><b>The Next Dubai? Why Investors Are Rushing to Ras Al Khaimah</b><small>Interview</small></span></a>
+          <a class="pf-vid" href="https://www.youtube.com/watch?v=LSNOH21xYdQ" target="_blank" rel="noopener"><span class="pf-vid__img" style="background-image:url('https://i.ytimg.com/vi/LSNOH21xYdQ/hqdefault.jpg')"><em>0:51</em></span><span class="pf-vid__txt"><b>Von Deutschland nach Kuşadası: Unsere Traumwohnung mit Pool</b><small>Client story</small></span></a>
+          <a class="pf-vid" href="https://www.youtube.com/watch?v=hpcjwmNsToQ" target="_blank" rel="noopener"><span class="pf-vid__img" style="background-image:url('https://i.ytimg.com/vi/hpcjwmNsToQ/hqdefault.jpg')"><em>1:11</em></span><span class="pf-vid__txt"><b>Pascal G. &amp; Daniel L., Canada | Happy Sellers of TEKCE</b><small>Client story</small></span></a>
+        </div>
       </div>
+      <div class="pf-channel reveal">
+        <div class="pf-channel__id"><b>TEKCE TV</b><span>Our YouTube channel</span></div>
+        <dl class="pf-channel__facts"><div><dt>12.1K</dt><dd>Subscribers</dd></div><div><dt>247</dt><dd>Videos</dd></div></dl>
+        <a class="btn btn--ghost" href="https://www.youtube.com/@TekceTV/" target="_blank" rel="noopener">Watch on YouTube</a>
+      </div>
+
+      <div class="split split--top pf-meet">
+        <div class="s-5">
+          <h3 class="h3">Meet our advisors, live.</h3>
+          <p class="muted">Our webinars are hosted by the TEKCE advisors who work in each market, on Zoom and in the buyer's language — with time for every question. Languages include English, Swedish, Turkish, Dutch and Hungarian.</p>
+          <div class="btn-row"><a class="btn btn--ghost" href="https://tekce.com/events" target="_blank" rel="noopener">All events</a></div>
+        </div>
+        <div class="s-7">
+          <ul class="pf-events">
+            <li class="reveal"><time><b>25</b><small>Nov 2026</small></time><div><h3>Webinar: Second Home in Spain</h3><p>17:00 Stockholm time · Zoom · in Swedish</p></div></li>
+            <li class="reveal"><time><b>27–28</b><small>Nov 2026</small></time><div><h3>Dubai's First Online Real Estate Fair</h3><p>14:00 Istanbul time · Zoom · in Turkish</p></div></li>
+            <li class="reveal"><time><b>9</b><small>Dec 2026</small></time><div><h3>Webinar: Non-Lucrative Visa in Spain</h3><p>14:00 Istanbul time · Zoom · in Turkish</p></div></li>
+          </ul>
+        </div>
+      </div>
+      <p class="illustrative">Videos and channel figures from youtube.com/@TekceTV, 20.11.2026.</p>
     </div>
   </section>
 
@@ -325,7 +328,7 @@
         <details><summary>How do property alerts work?</summary><div><p>Save your search in the TEKCE App and choose to be notified of new matching listings by push notification, SMS or email.</p></div></details>
       </div>
       <div class="notes">
-        <p>Listing count and app features as announced on tekce.com (October 2025). Languages, currencies and listing features as shown on tekce.com, November 2026. Event details from tekce.com/events.</p>
+        <p>Listing count and app features as announced on tekce.com (October 2025). Languages, currencies and listing features as shown on tekce.com, November 2026. Event details from tekce.com/events. TEKCE TV figures from YouTube, 20.11.2026.</p>
       </div>
     </div>
   </section>
@@ -361,7 +364,7 @@
     </div>
   </div>
 </footer>
-<script src="../../../assets/js/proptech.js?v=12"></script>
-<script src="../../../assets/js/platform.js?v=12"></script>
+<script src="../../../assets/js/proptech.js?v=14"></script>
+<script src="../../../assets/js/platform.js?v=14"></script>
 </body>
 </html>

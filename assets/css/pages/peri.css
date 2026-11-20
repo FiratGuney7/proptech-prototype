@@ -147,3 +147,6 @@
 .lib__logo { display: block; height: 92px; width: auto; margin: 0 auto 6px; }
 .peri-chat__av { flex: none; width: 36px; height: 36px; }
 .peri-wm-inline { display: inline-block; height: .94em; width: auto; vertical-align: -.22em; margin-right: .12em; }
+
+.dict__word b { display: inline-flex; align-items: flex-end; gap: .14em; }
+.dict__sym { display: block; height: .98em; width: auto; margin-bottom: .2em; }

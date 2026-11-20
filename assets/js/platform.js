@@ -39,66 +39,61 @@
   render();
 })();
 
-/* Platform page: preset filters. Counts, URLs and the first three listings of
-   each combination are read from #pf-find-data, taken from tekce.com on 20.11.2026. */
+/* Platform page: preset filters. Result counts, search URLs and the first three
+   listings of every combination were read from tekce.com on 20.11.2026 (#pf-find-data). */
 (function () {
   var raw = document.getElementById('pf-find-data');
   var mock = document.querySelector('.pf-find__mock');
   var panel = document.querySelector('.pf-find');
   if (!raw || !mock || !panel) return;
   var data = JSON.parse(raw.textContent);
-  var state = { loc: 'any', villa: '0', pool: false, sea: false };
-  var LOC = { any: 'Select Location, e.g. Marbella', antalya: 'Antalya, Türkiye', spain: 'Spain' };
+  var state = { loc: 'any', type: 'all', feat: 'none' };
+  var LOC = { any: 'Select Location, e.g. Marbella', dubai: 'Dubai, United Arab Emirates', antalya: 'Antalya, Türkiye', istanbul: 'İstanbul, Türkiye',
+    alicante: 'Alicante, Spain', malaga: 'Málaga, Spain', kyrenia: 'Kyrenia (Girne), North Cyprus' };
+  var TYPE = { apartments: 'Apartments', houses: 'Houses', commercial: 'Commercial', land: 'Land' };
+  var FEAT = { pool: 'Private pool', sea: 'Sea view', beach: 'Beachfront', newbuild: 'New build', inst: 'Buy in installments' };
   var img = function (n) { return '../../../assets/img/' + n; };
-  function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+  function esc(t) { var d = document.createElement('div'); d.textContent = t == null ? '' : t; return d.innerHTML; }
   function card(ref) {
-    var x = data.listings[ref];
-    var from = x.r && x.r.indexOf(',') > -1 ? '<small>From</small> ' : '';
-    var specs = x.r ? '<span><img src="' + img('room.svg') + '" alt="">' + x.r + '</span><span><img src="' + img('shower.svg') + '" alt="">' + x.b + '</span>' : '';
-    return '<a class="tk-card" href="' + x.url + '" target="_blank" rel="noopener" tabindex="-1">' +
-      '<div class="tk-card__photo" style="background-image:url(\'' + x.img + '\')"><span class="tk-card__ref">' + ref + '</span><span class="tk-card__star">☆</span></div>' +
-      '<div class="tk-card__body"><h4>' + esc(x.t) + '</h4><p class="tk-card__loc">' + esc(x.loc) + '</p><p class="tk-card__specs">' + specs + '</p>' +
-      '<p class="tk-card__price">' + from + x.p + ' <small>' + x.c + '</small></p></div></a>';
+    var x = data.L[ref]; // [title, location, rooms, baths, price, currency, image, url]
+    var from = x[2] && x[2].indexOf(',') > -1 ? '<small>From</small> ' : '';
+    var specs = x[2] ? '<span><img src="' + img('room.svg') + '" alt="">' + esc(x[2]) + '</span><span><img src="' + img('shower.svg') + '" alt="">' + esc(x[3]) + '</span>' : '';
+    return '<a class="tk-card" href="' + x[7] + '" target="_blank" rel="noopener" tabindex="-1">' +
+      '<div class="tk-card__photo" style="background-image:url(\'' + x[6] + '\')"><span class="tk-card__ref">' + esc(ref) + '</span><span class="tk-card__star">☆</span></div>' +
+      '<div class="tk-card__body"><h4>' + esc(x[0]) + '</h4><p class="tk-card__loc">' + esc(x[1]) + '</p><p class="tk-card__specs">' + specs + '</p>' +
+      '<p class="tk-card__price">' + from + esc(x[4]) + ' <small>' + esc(x[5]) + '</small></p></div></a>';
   }
   function render() {
-    var key = state.loc + state.villa + (state.pool ? '1' : '0') + (state.sea ? '1' : '0');
-    var c = data.combos[key];
+    var key = state.loc + '|' + state.type + '|' + state.feat;
+    var r = data.R[key], url = data.U[key], n = Number(r[0]);
     var grid = mock.querySelector('.pf-find__grid');
     grid.classList.add('is-swapping');
     setTimeout(function () {
-      grid.innerHTML = c.refs.map(card).join('');
+      grid.innerHTML = n ? r.slice(1).map(card).join('') : '<p class="pf-find__none">No properties match this search on tekce.com right now. Try another combination.</p>';
       grid.classList.remove('is-swapping');
     }, 160);
-    mock.querySelector('.pf-find__count').textContent = (c.n > 12 ? 12 : c.n) + ' of ' + c.n;
-    mock.querySelector('.pf-find__url').textContent = c.url.replace('https://', '');
+    mock.querySelector('.pf-find__count').textContent = Math.min(12, n) + ' of ' + n;
+    mock.querySelector('.pf-find__url').textContent = url.replace('https://', '');
     var input = mock.querySelector('.pf-find__input');
     input.textContent = LOC[state.loc]; input.classList.toggle('is-set', state.loc !== 'any');
-    var on = { loc: state.loc !== 'any', villa: state.villa === '1', pool: state.pool, sea: state.sea };
+    var on = { loc: state.loc !== 'any', type: state.type !== 'all', ext: state.feat === 'pool', tag: state.feat !== 'none' && state.feat !== 'pool' };
     mock.querySelectorAll('[data-k]').forEach(function (s) { s.classList.toggle('on', !!on[s.getAttribute('data-k')]); });
     var chips = [];
-    if (state.villa === '1') chips.push('Villas & houses');
-    if (state.pool) chips.push('Private pool');
-    if (state.sea) chips.push('Sea view');
+    if (TYPE[state.type]) chips.push(TYPE[state.type]);
+    if (FEAT[state.feat]) chips.push(FEAT[state.feat]);
     mock.querySelector('.tk-search__chosen').innerHTML = chips.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
     var go = document.querySelector('.pf-find__go');
-    go.href = c.url;
-    go.querySelector('.pf-find__total').textContent = Number(c.n).toLocaleString('en') + ' properties';
+    go.href = url;
+    go.querySelector('.pf-find__total').textContent = n.toLocaleString('en') + (n === 1 ? ' property' : ' properties');
   }
-  function group(attr, apply) {
+  ['loc', 'type', 'feat'].forEach(function (attr) {
     var btns = panel.querySelectorAll('[data-' + attr + ']');
     btns.forEach(function (b) {
       b.addEventListener('click', function () {
         btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
-        apply(b.getAttribute('data-' + attr)); render();
+        state[attr] = b.getAttribute('data-' + attr); render();
       });
     });
-  }
-  group('loc', function (v) { state.loc = v; });
-  group('villa', function (v) { state.villa = v; });
-  panel.querySelectorAll('[data-feat]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var f = b.getAttribute('data-feat'); state[f] = !state[f];
-      b.setAttribute('aria-pressed', state[f]); render();
-    });
   });
+  render();
 })();

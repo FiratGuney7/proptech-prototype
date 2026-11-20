@@ -141,3 +141,9 @@
 /* Roadmap: everything is live */
 .road::before { background: var(--peri); }
 .road::after { display: none; }
+
+/* ===== Peri brand kit ===== */
+.dict__wm { display: block; height: .82em; width: auto; }
+.lib__logo { display: block; height: 92px; width: auto; margin: 0 auto 6px; }
+.peri-chat__av { flex: none; width: 36px; height: 36px; }
+.peri-wm-inline { display: inline-block; height: .94em; width: auto; vertical-align: -.22em; margin-right: .12em; }

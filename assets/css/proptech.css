@@ -246,3 +246,7 @@ body.p-keycost .p-hero__tag em { color: #c46f00; }
 .status--live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 0 currentColor; animation: live-pulse 2.4s ease-out infinite; }
 @keyframes live-pulse { 0% { box-shadow: 0 0 0 0 rgba(105,224,159,.55); } 70% { box-shadow: 0 0 0 7px rgba(105,224,159,0); } 100% { box-shadow: 0 0 0 0 rgba(105,224,159,0); } }
 @media (prefers-reduced-motion: reduce) { .status--live::before { animation: none; } }
+
+/* Subnav: reserve the bold width of every item so names never shift between pages */
+.pt-subnav li a { display: inline-grid; }
+.pt-subnav li a::after { content: attr(data-label); font-weight: 700; height: 0; overflow: hidden; visibility: hidden; user-select: none; pointer-events: none; }

@@ -354,152 +354,22 @@
 .peri-badge__av { flex: none; width: 76px; height: 76px; }
 .peri-badge__name img { display: block; height: 40px; width: auto; }
 
-/* ================= Design options (?hero= / ?journey=) ================= */
-html:not([data-hero="b"]) [data-v="hero-b"], html:not([data-hero="c"]) [data-v="hero-c"],
-html[data-hero="b"] [data-v="hero-a"], html[data-hero="c"] [data-v="hero-a"],
-html:not([data-journey="b"]) [data-v="journey-b"], html:not([data-journey="c"]) [data-v="journey-c"],
-html[data-journey="b"] [data-v="journey-a"], html[data-journey="c"] [data-v="journey-a"] { display: none !important; }
-.opt-switch { position: fixed; right: 16px; bottom: 16px; z-index: 300; display: grid; gap: 6px; padding: 10px 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 12px 30px rgba(10,32,62,.18); font-size: 12px; }
-.opt-switch div { display: flex; align-items: center; gap: 4px; }
-.opt-switch span { width: 56px; font-weight: 600; color: var(--navy); }
-.opt-switch button { width: 30px; height: 28px; border: 1px solid #ccd8e7; background: #fff; border-radius: 4px; font: inherit; font-weight: 600; color: var(--navy); cursor: pointer; }
-.opt-switch button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
-
 /* ---------- Hero A: "by TEKCE" bold, everything else regular ---------- */
 .pt-hero__title { font-weight: 400; }
 .pt-hero__title b { font-weight: 700; }
 .pt-hero__claim { font-weight: 400; }
 
-/* ---------- Hero B: navy, headline + the staircase of TEKCE firsts ---------- */
-.ph2 { padding: clamp(64px, 8vw, 112px) 0 clamp(56px, 6vw, 88px); }
-.ph2__grid { display: grid; grid-template-columns: 6fr 6fr; gap: 48px 64px; align-items: end; }
-.ph2__title { margin: 0; font-size: clamp(48px, 6.6vw, 96px); font-weight: 300; letter-spacing: -.04em; line-height: .98; color: #fff; }
-.ph2__title b { font-weight: 700; }
-.ph2__sign { display: flex; align-items: center; gap: 12px; margin: 26px 0 28px; font-size: 18px; color: rgba(255,255,255,.75); }
-.ph2__sign::before { content: ""; width: 40px; height: 2px; background: var(--red); }
-.ph2__sign span { font-weight: 700; color: #fff; }
-.ph2 .lead { color: rgba(255,255,255,.78); margin: 0; max-width: 560px; }
-.ph2-firsts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; gap: 0; }
-.ph2-firsts li { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: calc(120px + var(--i) * 46px); padding: 0 10px 0 12px; border-left: 1px solid rgba(147,193,255,.35); }
-.ph2-bar { position: absolute; left: -1px; right: 0; top: 0; height: 2px; background: rgba(147,193,255,.55); }
-.ph2-firsts li:last-child .ph2-bar { background: var(--red); }
-.ph2-firsts li:last-child::after { content: ""; position: absolute; right: -5px; top: -4px; width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
-.ph2-firsts time { font-size: 13px; font-weight: 600; letter-spacing: .08em; color: var(--blue-soft); }
-.ph2-firsts b { margin-top: 4px; font-size: 15px; line-height: 1.25; color: #fff; }
-.ph2-firsts small { margin-top: 4px; font-size: 12px; line-height: 1.35; color: rgba(255,255,255,.6); }
-.ph2__principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(56px, 6vw, 80px); border-top: 1px solid rgba(255,255,255,.16); }
-.ph2__principles div { padding: 26px 32px 0 0; }
-.ph2__principles div + div { padding-left: 32px; border-left: 1px solid rgba(255,255,255,.16); }
-.ph2__principles h2 { margin: 0 0 8px; font-size: 18px; font-weight: 600; color: #fff; }
-.ph2__principles p { margin: 0; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.65); }
-
-/* ---------- Hero C: the headline itself is the staircase ---------- */
-.ph3 { padding: clamp(64px, 8vw, 112px) 0 clamp(56px, 6vw, 88px); background: var(--pale, #f4f7fb); }
-.ph3__title { margin: 0; display: grid; font-size: clamp(42px, 6.2vw, 92px); font-weight: 300; letter-spacing: -.04em; line-height: 1.04; color: var(--navy); }
-.ph3__title span { display: block; padding-bottom: .06em; border-bottom: 1px solid rgba(19,52,97,.18); }
-.ph3__title span:nth-child(2) { margin-left: 1.2em; }
-.ph3__title span:nth-child(3) { margin-left: 2.4em; }
-.ph3__title span:nth-child(4) { margin-left: 3.6em; border-bottom: 2px solid var(--red); }
-.ph3__title b { font-weight: 700; }
-.ph3__lead { margin: 36px 0 0 auto; max-width: 560px; }
-.ph3__principles { list-style: none; margin: clamp(56px, 6vw, 88px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.ph3__principles span { display: block; font-size: 56px; font-weight: 200; line-height: 1; letter-spacing: -.03em; color: #93c1ff; }
-.ph3__principles h2 { margin: 14px 0 8px; font-size: 20px; font-weight: 600; color: var(--navy); }
-.ph3__principles p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
-
-@media (max-width: 900px) {
-  .ph2__grid, .ph2__principles, .ph3__principles { grid-template-columns: 1fr; }
-  .ph2__principles div + div { padding-left: 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.16); margin-top: 24px; }
-  .ph2-firsts { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .ph2-firsts li { min-height: calc(110px + var(--i) * 28px); padding: 0 4px 0 6px; }
-  .ph2-firsts b { font-size: 12px; } .ph2-firsts small { display: none; }
-  .ph3__title span:nth-child(2) { margin-left: .5em; } .ph3__title span:nth-child(3) { margin-left: 1em; } .ph3__title span:nth-child(4) { margin-left: 1.5em; }
-}
-
-/* ---------- Journey A: CRM is now its own row in the flow ---------- */
-.jy { grid-template-rows: auto auto auto; }
-.jy__crm { display: none; }
-.jy__crmlabel { grid-column: 1; grid-row: 3; display: flex; flex-direction: column; justify-content: center; gap: 4px; margin-top: 8px; padding: 16px 18px 16px 20px; background: rgba(255,255,255,.1); border-radius: 10px 0 0 10px; }
-.jy__crmlabel b { font-size: 14px; color: #fff; }
-.jy__crmlabel span { font-size: 12px; color: rgba(255,255,255,.6); }
-.jy__rec { grid-column: var(--c); grid-row: 3; display: flex; align-items: center; gap: 9px; margin: 8px 0 0; padding: 16px 16px; background: rgba(255,255,255,.05); border-top: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.12); border-left: 1px solid rgba(255,255,255,.08); font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.75); }
-.jy__rec[style*="--c:6"] { border-right: 1px solid rgba(255,255,255,.12); border-radius: 0 10px 10px 0; }
-.jy__rec i { flex: none; width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid #69e09f; position: relative; }
-.jy__rec i::after { content: ""; position: absolute; left: 4px; top: 1.5px; width: 4px; height: 7px; border: solid #69e09f; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+/* ---------- Journey: six steps, CRM is step 06 ---------- */
+.jy--6 { grid-template-columns: 150px repeat(6, minmax(0, 1fr)); }
+.jy--6 .jy__step { padding-right: 16px; }
+.jy--6 .journey__verb { font-size: 20px; }
+.jy__say[style*="--c:6"] { border-right: 0; border-radius: 0; }
+.jy__say[style*="--c:7"] { border-right: 1px solid rgba(142,155,255,.45); border-radius: 0 10px 10px 0; }
+.jy__crm, .jy__crmlabel, .jy__rec { display: none; }
+.journey__prod--static { cursor: default; }
+.journey__prod--static::after { content: none; }
+.journey__prod--static:hover { color: var(--blue-soft); }
 @media (max-width: 1000px) {
-  .jy__crmlabel { grid-column: 1; grid-row: auto; order: 99; border-radius: 10px; }
-  .jy__rec { grid-column: 1; grid-row: auto; margin: 0 0 8px; border: 1px solid rgba(255,255,255,.12) !important; border-radius: 10px !important; }
-}
-
-/* ---------- Journey B: Peri is the thread every step hangs on ---------- */
-.jb { display: grid; grid-template-columns: 150px repeat(5, minmax(0, 1fr)); grid-template-rows: auto 56px auto auto; position: relative; }
-.jb__info { grid-column: var(--c); grid-row: 1; padding: 0 22px 22px 0; }
-.jb__info p { margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.62); }
-.jb__peri { grid-column: 1; grid-row: 2; display: flex; align-items: center; gap: 8px; text-decoration: none; position: relative; z-index: 1; background: var(--navy-950, #0a203e); padding-right: 10px; flex-wrap: wrap; }
-.jb__peri img:first-child { height: 40px; width: auto; }
-.jb__peri img:nth-child(2) { height: 22px; width: auto; }
-.jb__peri .status { font-size: 12px; flex-basis: 100%; }
-.jb__thread { grid-column: 1 / -1; grid-row: 2; align-self: center; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #8e9bff, #6e7ff3); box-shadow: 0 0 18px rgba(142,155,255,.55); }
-.jb__node { grid-column: var(--c); grid-row: 2; align-self: center; justify-self: start; position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; box-shadow: 0 0 0 4px #6e7ff3; }
-.jb__node img { width: 34px; height: 34px; display: block; }
-.jb__say { grid-column: var(--c); grid-row: 3; position: relative; margin: 14px 12px 0 0; padding: 14px 16px; background: #6e7ff3; color: #fff; border-radius: 4px 14px 14px 14px; font-size: 14px; line-height: 1.45; }
-.jb__say::before { content: ""; position: absolute; left: 14px; top: -14px; width: 2px; height: 14px; background: #8e9bff; }
-.jb__crm { grid-column: 1; grid-row: 4; display: flex; align-items: baseline; gap: 8px; margin-top: 22px; padding-top: 14px; }
-.jb__crm b { font-size: 14px; color: #fff; }
-.jb__crm span { font-size: 12px; color: rgba(255,255,255,.55); }
-.jb__rail { grid-column: 1 / -1; grid-row: 4; align-self: start; margin-top: 22px; height: 1px; background: rgba(255,255,255,.22); }
-.jb__rec { grid-column: var(--c); grid-row: 4; margin: 22px 12px 0 0; padding-top: 14px; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.7); position: relative; }
-.jb__rec::before { content: ""; position: absolute; left: 0; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #93c1ff; }
-@media (max-width: 1000px) {
-  .jb { grid-template-columns: 1fr; grid-template-rows: none; padding-left: 26px; }
-  .jb > * { grid-column: 1 !important; grid-row: auto !important; }
-  .jb__thread { position: absolute; left: 8px; top: 0; bottom: 0; width: 4px; height: auto; }
-  .jb__rail { display: none; }
-  .jb__peri { background: none; margin-bottom: 18px; }
-  .jb__node { margin: 10px 0 0 -42px; width: 34px; }
-  .jb__info { padding: 0; margin-top: -30px; }
-  .jb__say { margin: 12px 0 0; }
-  .jb__say::before { display: none; }
-  .jb__crm { display: none; }
-  .jb__rec { margin: 8px 0 26px; padding-top: 0; padding-left: 16px; }
-  .jb__rec::before { top: 5px; }
-  .jb__rec::after { content: "CRM"; margin-left: 6px; font-size: 11px; font-weight: 700; color: #93c1ff; }
-}
-
-/* ---------- Journey C: vertical, Peri as the spine ---------- */
-.jc__head, .jc__row { display: grid; grid-template-columns: minmax(0, 5fr) 72px minmax(0, 6fr); gap: 0 28px; align-items: start; }
-.jc__head { align-items: center; margin-bottom: 8px; }
-.jc__peri-logo { justify-self: center; position: relative; z-index: 1; }
-.jc__peri-logo img { display: block; width: 56px; height: 56px; border-radius: 50%; box-shadow: 0 0 0 5px #6e7ff3, 0 0 30px rgba(142,155,255,.6); }
-.jc__head p { margin: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; font-size: 15px; color: rgba(255,255,255,.75); }
-.jc__head p img { height: 24px; width: auto; }
-.jc__list { list-style: none; margin: 0; padding: 0; position: relative; }
-.jc__list::before { content: ""; position: absolute; top: -8px; bottom: 28px; left: calc(5 / 11 * (100% - 128px) + 28px + 35px); width: 3px; background: linear-gradient(180deg, #8e9bff, #6e7ff3); box-shadow: 0 0 16px rgba(142,155,255,.5); }
-.jc__row { padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
-.jc__row:last-child { border-bottom: 0; }
-.jc__info { text-align: right; }
-.jc__info .journey__verb { min-height: 0; }
-.jc__info p { margin: 8px 0 0 auto; max-width: 360px; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.62); }
-.jc__node { justify-self: center; position: relative; z-index: 1; margin-top: 6px; }
-.jc__node img { display: block; width: 30px; height: 30px; border-radius: 50%; box-shadow: 0 0 0 4px #6e7ff3; }
-.jc__say { margin: 0; padding: 14px 18px; background: #6e7ff3; color: #fff; border-radius: 4px 16px 16px 16px; font-size: 15px; line-height: 1.45; max-width: 460px; }
-.jc__rec { display: flex; gap: 8px; align-items: baseline; margin: 10px 0 0; font-size: 13px; color: rgba(255,255,255,.65); }
-.jc__rec b { font-size: 11px; letter-spacing: .08em; color: #93c1ff; }
-@media (max-width: 900px) {
-  .jc__head, .jc__row { grid-template-columns: 44px minmax(0, 1fr); gap: 10px 16px; }
-  .jc__head > span { display: none; }
-  .jc__peri-logo img { width: 44px; height: 44px; }
-  .jc__info { grid-column: 2; text-align: left; }
-  .jc__info p { margin-left: 0; }
-  .jc__node { grid-column: 1; grid-row: 1; }
-  .jc__peri { grid-column: 2; }
-  .jc__list::before { left: 21px; }
-}
-@media (max-width: 1000px) {
-  .jb__node { display: none; }
-  .jb__info { margin-top: 0; padding-top: 18px; }
-  .jb__info::before { content: ""; position: absolute; left: -24px; margin-top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #6e7ff3; box-shadow: 0 0 0 3px rgba(142,155,255,.35); }
-  .jb__info { position: relative; }
-  .jb__thread { left: 6px; top: 70px; }
-  .jb__peri .status { flex-basis: auto; margin-left: 4px; }
+  .jy--6 { grid-template-columns: 1fr; }
+  .jy__say[style*="--c:7"] { border-radius: 10px; }
 }

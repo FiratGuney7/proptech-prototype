@@ -538,3 +538,17 @@ a.jx__prod:hover::after { transform: translateX(4px); }
 
 /* Manifesto buttons: normal case (product names) */
 .principles--gaps .btn { text-transform: none; letter-spacing: 0; font-size: 14px; }
+
+/* Hero steps v2: fixed rise per step, all steps share one baseline */
+.pt-steps { align-items: stretch; }
+.pt-steps li, .pt-steps li:nth-child(1), .pt-steps li:nth-child(2), .pt-steps li:nth-child(3) { margin-bottom: 0; border-top: 1px solid var(--navy); border-left: 1px solid var(--navy); padding: 28px 32px 8px 28px; }
+.pt-steps li:nth-child(1) { margin-top: 96px; border-left: 0; padding-left: 0; }
+.pt-steps li:nth-child(2) { margin-top: 48px; }
+.pt-steps li:nth-child(3) { margin-top: 0; border-top: 2px solid var(--red); }
+.pt-steps li:nth-child(2)::before, .pt-steps li:nth-child(3)::before { content: none; }
+@media (max-width: 900px) {
+  .pt-steps li, .pt-steps li:nth-child(1), .pt-steps li:nth-child(2), .pt-steps li:nth-child(3) { margin-top: 0; padding: 22px 0 24px 22px; border-left: 1px solid var(--navy); }
+  .pt-steps li:nth-child(1) { margin-left: 0; }
+  .pt-steps li:nth-child(2) { margin-left: 22px; }
+  .pt-steps li:nth-child(3) { margin-left: 44px; border-top: 2px solid var(--red); }
+}

@@ -162,3 +162,7 @@
 .peri-sym-inline { display: inline-block; height: 1.02em; width: auto; vertical-align: -.2em; margin-right: .28em; }
 
 .peri-inline { white-space: nowrap; }
+
+/* Privacy note: link to the privacy policy */
+.privacy a { color: #4b58c9; text-decoration: underline; text-underline-offset: 3px; }
+.privacy a:hover { color: var(--navy); }

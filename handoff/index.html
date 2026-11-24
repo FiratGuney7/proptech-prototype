@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PropTech notlar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #133461; --blue: #1360c9; --ink: #1d2b44; --ink-2: #5b6b82; --line: #dfe6f0; --pale: #f4f7fb; --warn: #b26300; --ok: #13814a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Libre Franklin", Arial, sans-serif; color: var(--ink); background: #fff; font-size: 15px; line-height: 1.6; }
+  .top { background: var(--navy); color: #fff; padding: 48px 0 40px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .top h1 { margin: 0 0 8px; font-size: 38px; font-weight: 300; letter-spacing: -.02em; }
+  .top h1 b { font-weight: 700; }
+  .top p { margin: 0; max-width: 720px; color: rgba(255,255,255,.75); }
+  .layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; padding: 40px 24px 96px; max-width: 1040px; margin: 0 auto; }
+  nav.toc { position: sticky; top: 24px; align-self: start; font-size: 13px; }
+  nav.toc a { display: block; padding: 5px 0; color: var(--ink-2); text-decoration: none; }
+  nav.toc a:hover { color: var(--blue); }
+  section { padding-top: 8px; margin-bottom: 48px; }
+  h2 { margin: 0 0 14px; font-size: 24px; color: var(--navy); letter-spacing: -.01em; }
+  h3 { margin: 24px 0 8px; font-size: 16px; color: var(--navy); }
+  p { margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  code { font-family: Consolas, Menlo, monospace; font-size: 13px; background: var(--pale); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; color: var(--navy); }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 13.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--pale); }
+  td a { color: var(--blue); word-break: break-all; }
+  .note { border-left: 3px solid var(--blue); background: var(--pale); padding: 12px 16px; margin: 12px 0 16px; border-radius: 0 6px 6px 0; }
+  .rule { display: grid; grid-template-columns: 26px 1fr; gap: 6px; margin-bottom: 10px; }
+  .rule b { color: var(--navy); }
+  .sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin-right: 6px; border: 1px solid rgba(0,0,0,.08); }
+  .tag-ok { color: var(--ok); font-weight: 600; } .tag-warn { color: var(--warn); font-weight: 600; }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } nav.toc { position: static; } table { display: block; overflow-x: auto; } .layout > * { min-width: 0; } th, td { min-width: 140px; } }
+  .switch { display: flex; gap: 8px; margin-top: 22px; }
+  .switch a { display: inline-flex; align-items: center; height: 38px; padding: 0 16px; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .switch a:hover { background: rgba(255,255,255,.1); }
+  .switch a[aria-current="page"] { background: #fff; color: #133461; border-color: #fff; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1><b>PropTech</b> · notlar</h1>
+    <p>tekce.com'un PropTech bölümünü bu prototipten geliştirirken korunması gerekenler, bağlanması gerekenler ve dikkat edilmesi gerekenler. İlk sürüm · 24.11.2026.</p>
+    <nav class="switch" aria-label="Sayfalar"><a href="index.html" aria-current="page">Notlar</a><a href="../brand/index.html">Logo sayfası</a></nav>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="İçindekiler">
+    <a href="#submenu">1. Alt menü</a>
+    <a href="#data">2. Veriler</a>
+    <a href="#forms">3. Bağlanacak formlar</a>
+  </nav>
+
+  <main>
+
+
+    <section id="submenu">
+      <h2>1. Alt menü</h2>
+      <p>PropTech alt menüsü, <a href="https://tekce.com/corporate/our-team" target="_blank" rel="noopener">tekce.com/corporate/our-team</a> sayfasındaki alt menünün (<code>nav.ourteam-nav</code>) aynısı. Aynı bileşeni kullanırken Our Team'de gördüğümüz iki sorunu PropTech'te tekrarlamayalım:</p>
+      <h3>Hizalama</h3>
+      <ul>
+        <li>Our Team'de linklerde <code>padding-right: 18px</code> var. Seçili / üzerine gelinen öğenin 2 px alt çizgisi bu yüzden yazının 18 px sağına taşıyor ve yazının altında kaymış görünüyor.</li>
+        <li>PropTech'te linklerde yatay padding yok; öğeler arası boşluk <code>margin-right: 32px</code> ile veriliyor. Alt çizgi tam yazı genişliğinde.</li>
+        <li>Seçili öğe kalınlaşmıyor (500 kalıyor, sadece renk <code>#1360c9</code> ve alt çizgi). Böylece sayfadan sayfaya geçerken öğeler yer değiştirmiyor.</li>
+      </ul>
+      <h3>Büyük harf</h3>
+      <ul>
+        <li>Our Team'de etiketler HTML'de büyük harfle yazılmış (LEADERSHIP TEAM, SALES TEAM…).</li>
+        <li>PropTech'te etiketler normal yazımla: <b>PropTech · Online Platforms · MyTEKCE · Peri AI · TeleProperty · TeleMortgage · KeyCost</b>. <code>text-transform: uppercase</code> kullanılmamalı; aksi halde “MyTEKCE”, “TeleProperty” gibi marka yazımları bozuluyor.</li>
+      </ul>
+    </section>
+
+
+    <section id="data">
+      <h2>2. Veriler</h2>
+      <p>Prototipteki bazı bölümler tekce.com'dan alınmış anlık verilerle çalışıyor (tarihleri aşağıda).</p>
+      <table>
+        <thead><tr><th>Nerede</th><th>Prototipteki veri</th><th>Canlıda</th></tr></thead>
+        <tbody>
+          <tr><td>Online Platforms · “One listing. Every buyer's own way of reading it.”</td><td>ALC-00869'un 12 dilde başlığı, “Base price” ile Beach / Airport etiketleri; 12 para biriminde fiyat; metrik / imperial aralıklar; her dil için ilan adresi (19–24.11.2026).</td><td><b>Canlıdan gelmeli</b>: ilan API'sinden dile göre başlık, etiketler ve adres; para birimine göre çevrilmiş fiyat.</td></tr>
+          <tr><td>Online Platforms · “Filters that think like an investor.”</td><td>7 konum × 5 tür × 6 özellik = 210 arama: her birinin ilk üç ilanı ve arama adresi (20.11.2026). Sonuç sayıları bilerek gösterilmiyor.</td><td><b>Mümkünse canlıdan</b> ya da canlıdan <b>haftada bir oluşturulan bir havuzdan</b> gelmeli. İkisi de mümkün değilse bu haliyle statik kalabilir. Filtre parametreleri tekce.com'dakilerle aynı: <code>type=</code> apartments / houses / commercial / land; <code>exterior=private-pool</code>; <code>tags=</code> sea-view / beach-front / new-build / buy-in-installments; konum yolları ör. <code>/property-uae/dubai</code>, <code>/property-cyprus/northcyprus-girne</code>.</td></tr>
+          <tr><td>Online Platforms · “Meet us online.”</td><td>Sıradaki üç webinar (25.11, 09.12, 16.12.2026).</td><td>tekce.com/events akışından: <b>Webinar</b> türündeki sıradaki üç etkinlik (fuar, lansman ve seminerler hariç).</td></tr>
+          <tr><td>Online Platforms · hero telefon ve arama mockup'ı</td><td>ALC-00869 / AYT-03237 ile tekce.com mobil ve masaüstü arayüzü.</td><td>Sabit kalabilir.</td></tr>
+          <tr><td>KeyCost sayfası ve genel bakış</td><td>ALC-00869, AYT-03237, DXB-00628 ve ECN-00615'in satın alma masrafları (19.11.2026).</td><td>Sabit kalabilir.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+
+
+    <section id="forms">
+      <h2>3. Bağlanacak formlar</h2>
+      <p>Bu butonlar bir sayfaya değil, tekce.com'daki mevcut formlara gider (aşağıdaki özniteliklerle <code>.formmodalbtn</code> tarafından açılan pencere).</p>
+      <table>
+        <thead><tr><th>Sayfa · buton</th><th>tekce.com formu</th><th>Öznitelikler</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>KeyCost · “Get your personal cost breakdown”</td><td>Request Further Details: her ilanda aynı yazının arkasındaki form</td><td><code>data-form="RequestFurtherDetails"</code><br><code>data-formtype="tur4"</code></td><td class="tag-ok">Eşleşiyor</td></tr>
+          <tr><td>TeleProperty · “Make an appointment”</td><td>Make an Appointment</td><td><code>data-form="Appointment"</code><br><code>data-formtype="tur1"</code></td><td class="tag-ok">Eşleşiyor</td></tr>
+          <tr><td>TeleMortgage · “Talk to an expert”</td><td>tekce.com'da mortgage'a özel bir form varsa o bağlanabilir; yoksa uygun bir form, ör. Request a Call (<code>WidgetCallback</code>) ya da Send Inquiry (<code>InquiryForm</code>).</td><td><code>data-form="WidgetCallback"</code> (öneri)</td><td class="tag-warn">Size kalmış</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+
+
+  </main>
+</div>
+</body>
+</html>

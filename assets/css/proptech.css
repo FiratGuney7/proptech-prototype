@@ -250,3 +250,28 @@ body.p-keycost .p-hero__tag em { color: #c46f00; }
 /* Subnav: reserve the bold width of every item so names never shift between pages */
 .pt-subnav li a { display: inline-grid; }
 .pt-subnav li a::after { content: attr(data-label); font-weight: 700; height: 0; overflow: hidden; visibility: hidden; user-select: none; pointer-events: none; }
+
+/* ===== Proptech submenu: same as the tekce.com/corporate/our-team submenu ===== */
+.pt-subnav { position: static; background: #eaeff7; border-bottom: 1px solid #c9d8ef; }
+.pt-subnav ul { justify-content: flex-start; gap: 0; height: 42px; }
+.pt-subnav li a { display: flex; align-items: center; height: 42px; padding: 0 18px 0 0; font-size: 13px; font-weight: 500; text-transform: uppercase; color: #133461; border-bottom: 2px solid transparent; transition: all .2s; }
+.pt-subnav li a::after { content: none; }
+.pt-subnav li a:hover, .pt-subnav li a[aria-current="page"] { color: #1360c9; border-bottom-color: #1360c9; font-weight: 500; }
+@media (max-width: 960px) { .pt-subnav ul { gap: 0; } }
+.pt-subnav li a { margin-right: 14px; }
+
+/* Submenu: mixed case, underline exactly under the label */
+.pt-subnav li a { text-transform: none; padding: 0; margin-right: 32px; }
+.pt-subnav li:last-child a { margin-right: 0; }
+
+/* Overview: "Next" only */
+.next-product--only > span { border-top: 1px solid var(--line); }
+.next-product--only a { text-align: right; border-left: 1px solid var(--line); padding-left: 32px; }
+@media (max-width: 600px) { .next-product--only > span { display: none; } .next-product--only a { border-left: 0; padding-left: 0; text-align: left; } }
+
+/* KeyCost logo: breakdown pie with keyhole; Key orange, Cost TEKCE blue (white on dark) */
+.kc-logo { gap: .16em; }
+.kc-logo__mark { width: 1.08em; height: 1.08em; margin-left: 0; }
+.kc-logo > span { color: #133461; }
+.kc-logo b { color: #ff9600; }
+.stage .kc-logo > span { color: #fff; }

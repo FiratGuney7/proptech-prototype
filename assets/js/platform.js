@@ -18,6 +18,8 @@
     $('.pf-loc__price').dir = L.dir;
     $('.pf-loc__amt').textContent = data.cur[state.cur];
     $('.pf-loc__cur').textContent = state.cur;
+    $('.pf-loc__bl').textContent = L.beach; $('.pf-loc__al').textContent = L.air;
+    $('.pf-loc__facts').dir = L.dir; $('.pf-loc__facts').lang = state.lang;
     $('.pf-loc__beach b').textContent = data.units[state.unit][0];
     $('.pf-loc__air b').textContent = data.units[state.unit][1];
     var go = $('.pf-loc__go');
@@ -25,13 +27,23 @@
     $('.pf-loc__goname').textContent = L.name + ' · ' + state.cur;
   }
 
+  var OUT = { lang: 'is-out', cur: 'is-out-price', unit: 'is-out-unit' };
+  var swapT = null;
   function bind(attr, key) {
     var btns = root.querySelectorAll('[data-' + attr + ']');
     btns.forEach(function (b) {
       b.addEventListener('click', function () {
-        state[key] = b.getAttribute('data-' + attr);
+        var v = b.getAttribute('data-' + attr);
         btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
-        render();
+        if (v === state[key]) return;
+        state[key] = v;
+        var cls = OUT[key];
+        root.classList.add(cls);
+        clearTimeout(swapT);
+        swapT = setTimeout(function () {
+          render();
+          setTimeout(function () { root.classList.remove('is-out', 'is-out-price', 'is-out-unit'); }, 30);
+        }, 200);
       });
     });
   }
@@ -63,16 +75,33 @@
       '<div class="tk-card__body"><h4>' + esc(x[0]) + '</h4><p class="tk-card__loc">' + esc(x[1]) + '</p><p class="tk-card__specs">' + specs + '</p>' +
       '<p class="tk-card__price">' + from + esc(x[4]) + ' <small>' + esc(x[5]) + '</small></p></div></a>';
   }
+  var shown = null;
+  function tween(el, to) {
+    var from = shown == null ? to : shown; shown = to;
+    var t0 = performance.now(), dur = 500;
+    function step(now) {
+      var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      var v = Math.round(from + (to - from) * e);
+      el.textContent = Math.min(12, v) + ' of ' + v;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    if (from === to) { el.textContent = Math.min(12, to) + ' of ' + to; return; }
+    requestAnimationFrame(step);
+    setTimeout(function () { el.textContent = Math.min(12, to) + ' of ' + to; }, dur + 60);
+  }
   function render() {
     var key = state.loc + '|' + state.type + '|' + state.feat;
     var r = data.R[key], url = data.U[key], n = Number(r[0]);
     var grid = mock.querySelector('.pf-find__grid');
     grid.classList.add('is-swapping');
-    setTimeout(function () {
+    clearTimeout(grid._t);
+    grid._t = setTimeout(function () {
       grid.innerHTML = n ? r.slice(1).map(card).join('') : '<p class="pf-find__none">No properties match this search on tekce.com right now. Try another combination.</p>';
       grid.classList.remove('is-swapping');
-    }, 160);
-    mock.querySelector('.pf-find__count').textContent = Math.min(12, n) + ' of ' + n;
+      Array.prototype.forEach.call(grid.children, function (el, k) { el.style.setProperty('--k', k); el.classList.add('is-in'); });
+    }, 170);
+    tween(mock.querySelector('.pf-find__count'), n);
+    mock.classList.add('is-flash'); clearTimeout(mock._f); mock._f = setTimeout(function () { mock.classList.remove('is-flash'); }, 450);
     mock.querySelector('.pf-find__url').textContent = url.replace('https://', '');
     var input = mock.querySelector('.pf-find__input');
     input.textContent = LOC[state.loc]; input.classList.toggle('is-set', state.loc !== 'any');
@@ -84,7 +113,6 @@
     mock.querySelector('.tk-search__chosen').innerHTML = chips.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
     var go = document.querySelector('.pf-find__go');
     go.href = url;
-    go.querySelector('.pf-find__total').textContent = n.toLocaleString('en') + (n === 1 ? ' property' : ' properties');
   }
   ['loc', 'type', 'feat'].forEach(function (attr) {
     var btns = panel.querySelectorAll('[data-' + attr + ']');

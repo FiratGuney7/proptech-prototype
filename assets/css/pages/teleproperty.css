@@ -103,3 +103,4 @@
   .tp-call__pip { width: 30%; bottom: 58px; }
   .tp-call__ctrls i { width: 28px; height: 28px; }
 }
+@media (max-width: 600px) { .tp-doc { width: calc(100% - 84px); } }

@@ -275,3 +275,6 @@ body.p-keycost .p-hero__tag em { color: #c46f00; }
 .kc-logo > span { color: #133461; }
 .kc-logo b { color: #ff9600; }
 .stage .kc-logo > span { color: #fff; }
+
+/* Phones on dark sections: a lighter bezel so the frame reads against navy */
+.stage .phone { background: linear-gradient(160deg, #3a5a8c 0%, #1d3a66 45%, #142d52 100%); box-shadow: 0 0 0 1px rgba(255,255,255,.22), inset 0 0 0 1px rgba(255,255,255,.08), 0 30px 70px rgba(0,0,0,.45); }

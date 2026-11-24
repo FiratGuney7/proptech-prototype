@@ -552,3 +552,6 @@ a.jx__prod:hover::after { transform: translateX(4px); }
   .pt-steps li:nth-child(2) { margin-left: 22px; }
   .pt-steps li:nth-child(3) { margin-left: 44px; border-top: 2px solid var(--red); }
 }
+
+/* MyTEKCE for partners: text on the same baseline as the TEKCE letters in the logo */
+.btn--my span { position: relative; top: 2px; }

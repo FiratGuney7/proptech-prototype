@@ -76,11 +76,11 @@
 .cr-doc__lines > div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: center; padding: 15px 0; border-bottom: 1px dashed #dfe6f0; }
 .cr-doc__lines dt { font-size: 13px; font-weight: 500; color: var(--ink-2); }
 .cr-doc__lines dd { margin: 0; font-size: 16px; color: var(--navy); }
-.cr-doc__pay { position: relative; margin: 0 -16px; padding: 15px 16px !important; border-radius: 6px; border-bottom-color: transparent !important; animation: cr-pay-bg 6s infinite; }
+.cr-doc__pay { position: relative; margin: 0 -16px; padding: 15px 16px !important; border-radius: 6px; border-bottom-color: transparent !important; animation: cr-pay-bg 3.6s infinite; }
 .cr-doc__pay dt { color: var(--navy) !important; font-weight: 600 !important; }
 .cr-doc__pay dd { font-weight: 600; }
 .cr-flip { display: block; height: 1.5em; overflow: hidden; }
-.cr-flip__in { display: flex; flex-direction: column; animation: cr-flip 6s infinite; }
+.cr-flip__in { display: flex; flex-direction: column; animation: cr-flip 3.6s infinite; }
 .cr-flip__in > span { display: block; height: 1.5em; line-height: 1.5em; white-space: nowrap; }
 .cr-flip__b { color: var(--accent-dark); }
 @keyframes cr-flip { 0%, 36% { transform: translateY(0); } 44%, 86% { transform: translateY(-1.5em); } 94%, 100% { transform: translateY(-3em); } }

@@ -57,6 +57,7 @@
     <a href="#submenu">1. Alt menü</a>
     <a href="#data">2. Veriler</a>
     <a href="#forms">3. Bağlanacak formlar</a>
+    <a href="#crypto">4. Pay with Crypto</a>
   </nav>
 
   <main>
@@ -74,7 +75,7 @@
       <h3>Büyük harf</h3>
       <ul>
         <li>Our Team'de etiketler HTML'de büyük harfle yazılmış (LEADERSHIP TEAM, SALES TEAM…).</li>
-        <li>PropTech'te etiketler normal yazımla: <b>PropTech · Online Platforms · MyTEKCE · Peri AI · TeleProperty · TeleMortgage · KeyCost</b>. <code>text-transform: uppercase</code> kullanılmamalı; aksi halde “MyTEKCE”, “TeleProperty” gibi marka yazımları bozuluyor.</li>
+        <li>PropTech'te etiketler normal yazımla: <b>PropTech · Online Platforms · MyTEKCE · Peri AI · TeleProperty · TeleMortgage · KeyCost · Pay with Crypto</b>. <code>text-transform: uppercase</code> kullanılmamalı; aksi halde “MyTEKCE”, “TeleProperty” gibi marka yazımları bozuluyor.</li>
       </ul>
     </section>
 
@@ -90,6 +91,7 @@
           <tr><td>Online Platforms · “Meet us online.”</td><td>Sıradaki üç webinar (25.11, 09.12, 16.12.2026).</td><td>tekce.com/events akışından: <b>Webinar</b> türündeki sıradaki üç etkinlik (fuar, lansman ve seminerler hariç).</td></tr>
           <tr><td>Online Platforms · hero telefon ve arama mockup'ı</td><td>ALC-00869 / AYT-03237 ile tekce.com mobil ve masaüstü arayüzü.</td><td>Sabit kalabilir.</td></tr>
           <tr><td>KeyCost sayfası ve genel bakış</td><td>ALC-00869, AYT-03237, DXB-00628 ve ECN-00615'in satın alma masrafları (19.11.2026).</td><td>Sabit kalabilir.</td></tr>
+          <tr><td>Pay with Crypto sayfası ve genel bakış</td><td>Kabul edilen kriptolar, Türkiye limitleri (günlük 1.000.000 USD, SWIFT USD 2–3 / EUR 5–7 gün), 2.500+ satış, 2017 hikâyesi: <a href="https://tekce.com/pay-with-cryptocurrency" target="_blank" rel="noopener">tekce.com/pay-with-cryptocurrency</a> (31.10.2026 güncellemesi).</td><td>Sabit kalabilir; tekce.com sayfası değişirse birlikte güncellenmeli.</td></tr>
         </tbody>
       </table>
     </section>
@@ -105,8 +107,27 @@
           <tr><td>KeyCost · “Get your personal cost breakdown”</td><td>Request Further Details: her ilanda aynı yazının arkasındaki form</td><td><code>data-form="RequestFurtherDetails"</code><br><code>data-formtype="tur4"</code></td><td class="tag-ok">Eşleşiyor</td></tr>
           <tr><td>TeleProperty · “Make an appointment”</td><td>Make an Appointment</td><td><code>data-form="Appointment"</code><br><code>data-formtype="tur1"</code></td><td class="tag-ok">Eşleşiyor</td></tr>
           <tr><td>TeleMortgage · “Talk to an expert”</td><td>tekce.com'da mortgage'a özel bir form varsa o bağlanabilir; yoksa uygun bir form, ör. Request a Call (<code>WidgetCallback</code>) ya da Send Inquiry (<code>InquiryForm</code>).</td><td><code>data-form="WidgetCallback"</code> (öneri)</td><td class="tag-warn">Size kalmış</td></tr>
+          <tr><td>Pay with Crypto · “Plan this payment” formu (sayfa sonu) ve hero'daki buton</td><td>Pay with Bitcoin: tekce.com/pay-with-cryptocurrency sayfasındaki form. Prototipteki form aynı alanları kullanıyor (Name Surname, Phone, E-mail, Message, Terms of Use).</td><td><code>data-form="PayWithBitcoin"</code><br><code>data-formtype="tur4"</code></td><td class="tag-ok">Eşleşiyor</td></tr>
         </tbody>
       </table>
+    </section>
+
+    <section id="crypto">
+      <h2>4. Pay with Crypto · ekipten cevap bekleyenler</h2>
+      <p>Sayfadaki her bilgi tekce.com'daki mevcut sayfadan alındı. Aşağıdakiler kaynakta yok; bu yüzden sayfada yer almıyor. Cevaplar gelirse SSS'ye eklenebilir.</p>
+      <h3>Alıcının soracağı sorular</h3>
+      <ul>
+        <li><b>Kur anı ve dalgalanma:</b> Kripto TEKCE cüzdanına ulaştıktan sonra ne kadar sürede çevriliyor? Transfer ile çevrim arasında fiyat düşerse aradaki farkı kim karşılıyor?</li>
+        <li><b>Ücretler:</b> Transfer ve çevrim için bir ücret ya da komisyon var mı, kim ödüyor?</li>
+        <li><b>Satış gerçekleşmezse:</b> Ödeme iade ediliyor mu, kripto olarak mı fiat olarak mı?</li>
+        <li><b>Paranın kaynağı:</b> KYC için kriptonun kaynağını gösteren hangi belgeler isteniyor (borsa dökümü, cüzdan geçmişi vb.)?</li>
+      </ul>
+      <h3>Ülkeler</h3>
+      <ul>
+        <li><b>Montenegro:</b> Kaynak sayfa Montenegro'yu kripto ödemesi yapılan ülkeler arasında sayıyor; ancak prototipin geri kalanında (KeyCost, telefonlar, Invest menüsü) Montenegro yok. Hâlâ aktif bir pazar mı? Değilse sayfadan ve “5 countries” rakamından çıkarılmalı.</li>
+        <li><b>BAE ve Kuzey Kıbrıs:</b> Kaynakta bu ülkelere özel bir kural yok; sayfadaki BAE kartında “standart adımlar ve kriptolar geçerli” deniyor. BAE için ayrı bir kural, limit, süre ya da satıcıya ödenen para birimi varsa İspanya ve Türkiye kartları gibi eklenmeli.</li>
+        <li><b>Satıcıya ödenen para birimi:</b> Türkiye dışında kaynakta yazmıyor; sayfada “In fiat, as your sales agreement states” deniyor.</li>
+      </ul>
     </section>
 
 

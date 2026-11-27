@@ -1,7 +1,7 @@
 {
   "trailingSlash": true,
   "redirects": [
-    { "source": "/corporate/:page(platform|mytekce|peri|teleproperty|telemortgage|keycost)/:rest*", "destination": "/corporate/proptech/:page/", "permanent": false },
-    { "source": "/corporate/:page(platform|mytekce|peri|teleproperty|telemortgage|keycost)", "destination": "/corporate/proptech/:page/", "permanent": false }
+    { "source": "/corporate/:page(platform|mytekce|peri|teleproperty|telemortgage|keycost|crypto)/:rest*", "destination": "/corporate/proptech/:page/", "permanent": false },
+    { "source": "/corporate/:page(platform|mytekce|peri|teleproperty|telemortgage|keycost|crypto)", "destination": "/corporate/proptech/:page/", "permanent": false }
   ]
 }

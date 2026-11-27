@@ -69,6 +69,13 @@
 .v-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 10px; font-size: 10px; color: var(--ink-2); }
 .v-legend span::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 2px; margin-right: 5px; background: var(--c); }
 
+/* Vignette: pay with crypto — four coins flow into one home */
+.v-flow { width: 100%; height: 100%; max-height: 150px; overflow: visible; }
+.v-flow text { letter-spacing: .02em; }
+.v-flow__halo { transform-origin: 292px 75px; animation: v-flow-halo 2.8s ease-out infinite; }
+@keyframes v-flow-halo { 0% { transform: scale(1); opacity: .5; } 70%, 100% { transform: scale(1.22); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .v-flow__dots, .v-flow__halo { display: none; } }
+
 /* Vignette: teleproperty */
 .v-call { width: 100%; height: 100%; border-radius: 8px; background: url("https://images.unsplash.com/photo-1682184805271-11671b7ecf4c?w=760&q=70&auto=format&fit=crop") center/cover; position: relative; }
 .v-call__live { position: absolute; left: 10px; top: 10px; display: flex; align-items: center; gap: 6px; background: rgba(10,32,62,.78); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: .08em; padding: 5px 9px; border-radius: 12px; }
@@ -459,9 +466,9 @@ a.jx__prod:hover::after { transform: translateX(4px); }
 
 /* ===== Journey v6: the original timeline, one Peri walking along it ===== */
 .jp { position: relative; }
-.jp__steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); position: relative; }
+.jp__steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n, 6), minmax(0, 1fr)); position: relative; }
 .jp__steps::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 1px; background: rgba(147,193,255,.35); }
-.jp__steps::after { content: ""; position: absolute; left: 0; top: 10px; height: 3px; width: calc((var(--i) + .5) / 6 * 100%); background: linear-gradient(90deg, rgba(142,155,255,.2), #8e9bff); border-radius: 2px; transition: width .7s var(--ease); }
+.jp__steps::after { content: ""; position: absolute; left: 0; top: 10px; height: 3px; width: calc((var(--i) + .5) / var(--n, 6) * 100%); background: linear-gradient(90deg, rgba(142,155,255,.2), #8e9bff); border-radius: 2px; transition: width .7s var(--ease); }
 .jp__step { position: relative; padding: 44px 20px 8px 0; cursor: pointer; outline: none; transition: opacity .35s; }
 .jp__step::before { content: ""; position: absolute; top: 4px; left: 0; width: 15px; height: 15px; border-radius: 50%; background: var(--navy-950); border: 1.5px solid var(--blue-soft); z-index: 1; }
 .jp__step:not(.is-on) { opacity: .62; }
@@ -469,10 +476,10 @@ a.jx__prod:hover::after { transform: translateX(4px); }
 .jp__step .journey__verb { font-size: 19px; }
 .jp__step p { margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.62); }
 .jp__inline { display: none; }
-.jp__peri { position: absolute; z-index: 2; top: -8px; left: calc(var(--i) / 6 * 100% - 12px); width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 0 0 3px #8e9bff, 0 0 26px rgba(142,155,255,.75); transition: left .7s var(--ease); }
+.jp__peri { position: absolute; z-index: 2; top: -8px; left: calc(var(--i) / var(--n, 6) * 100% - 12px); width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 0 0 3px #8e9bff, 0 0 26px rgba(142,155,255,.75); transition: left .7s var(--ease); }
 .jp__peri img { display: block; width: 40px; height: 40px; }
 .jp__panel { position: relative; display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: center; gap: 20px; margin-top: 30px; padding: 22px 26px; border-radius: 14px; background: rgba(110,127,243,.16); border: 1px solid rgba(142,155,255,.4); }
-.jp__panel::before { content: ""; position: absolute; top: -8px; left: calc(var(--i) / 6 * 100% + 4px); width: 14px; height: 14px; background: #1f2c62; border-left: 1px solid rgba(142,155,255,.4); border-top: 1px solid rgba(142,155,255,.4); transform: rotate(45deg); transition: left .7s var(--ease); }
+.jp__panel::before { content: ""; position: absolute; top: -8px; left: calc(var(--i) / var(--n, 6) * 100% + 4px); width: 14px; height: 14px; background: #1f2c62; border-left: 1px solid rgba(142,155,255,.4); border-top: 1px solid rgba(142,155,255,.4); transform: rotate(45deg); transition: left .7s var(--ease); }
 .jp__who { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; text-decoration: none; }
 .jp__who-sym { width: 28px; height: auto; }
 .jp__who-wm { height: 20px; width: auto; }
@@ -534,7 +541,7 @@ a.jx__prod:hover::after { transform: translateX(4px); }
 @media (max-width: 1000px) { .jp__step { padding-top: 0; } }
 
 /* progress line ends at Peri, not past it */
-.jp__steps::after { width: calc(var(--i) / 6 * 100% + 8px); }
+.jp__steps::after { width: calc(var(--i) / var(--n, 6) * 100% + 8px); }
 
 /* Manifesto buttons: normal case (product names) */
 .principles--gaps .btn { text-transform: none; letter-spacing: 0; font-size: 14px; }
@@ -555,3 +562,8 @@ a.jx__prod:hover::after { transform: translateX(4px); }
 
 /* MyTEKCE for partners: text on the same baseline as the TEKCE letters in the logo */
 .btn--my span { position: relative; top: 2px; }
+
+/* Journey with 7 steps (Pay with Crypto) */
+.jp { --n: 7; }
+.jp__step { padding-right: 14px; }
+.jp__step .journey__verb { font-size: 18px; }

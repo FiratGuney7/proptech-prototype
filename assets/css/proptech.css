@@ -21,6 +21,7 @@ body.p-teleproperty { --accent: #e20613; }  /* TeleProperty brand red */
 body.p-telemortgage { --accent: #006d50; }  /* TeleMortgage brand green */
 body.p-mytekce      { --accent: #e53a43; --red: #e53a43; }  /* MyTEKCE brand red */
 body.p-peri         { --accent: #6e7ff3; }
+body.p-crypto       { --accent: #f7931a; --accent-dark: #b4610a; --accent-soft: #fff1df; }  /* Bitcoin orange */
 
 /* ---------- Proptech sub-navigation ---------- */
 
@@ -88,7 +89,7 @@ body.p-peri         { --accent: #6e7ff3; }
 .pt-subnav ul::-webkit-scrollbar { display: none; }
 .pt-subnav li { --pn: var(--red); }
 .pt-subnav .pn-platform { --pn: #4694ff; } .pt-subnav .pn-mytekce { --pn: #e53a43; } .pt-subnav .pn-peri { --pn: #6e7ff3; }
-.pt-subnav .pn-teleproperty { --pn: #e20613; } .pt-subnav .pn-telemortgage { --pn: #006d50; } .pt-subnav .pn-keycost { --pn: #ff9600; }
+.pt-subnav .pn-teleproperty { --pn: #e20613; } .pt-subnav .pn-telemortgage { --pn: #006d50; } .pt-subnav .pn-keycost { --pn: #ff9600; } .pt-subnav .pn-crypto { --pn: #f7931a; }
 .pt-subnav li a { display: block; padding: 18px 2px 15px; font-size: 14px; font-weight: 500; color: var(--navy); text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap; transition: border-color .2s, color .2s; }
 .pt-subnav li a:hover { border-bottom-color: var(--pn); }
 .pt-subnav li a[aria-current="page"] { border-bottom-color: var(--pn); font-weight: 700; }
@@ -180,6 +181,7 @@ body.p-peri         { --accent: #6e7ff3; }
 .p-hero__tag { font-size: clamp(20px, 2vw, 26px); line-height: 1.3; font-weight: 400; color: var(--navy); margin: 0 0 18px; max-width: 520px; }
 .p-hero__tag em { font-style: normal; color: var(--accent); }
 body.p-keycost .p-hero__tag em { color: #c46f00; }
+body.p-crypto .p-hero__tag em { color: var(--accent-dark); }
 .stage .p-hero__mark, .stage .p-hero__tag { color: #fff; }
 .p-hero__logo img { height: clamp(38px, 4.2vw, 56px); width: auto; }
 .p-hero__logo--my img { height: clamp(56px, 6vw, 80px); }
